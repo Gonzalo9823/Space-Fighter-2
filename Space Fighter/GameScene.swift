@@ -23,6 +23,8 @@ let bestScore = NSUserDefaults.standardUserDefaults()
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    var viewController: GameViewController!
+    
     var hero : SKSpriteNode!
     var controllerAfuera : SKSpriteNode!
     var controllerAdentro : SKSpriteNode!
@@ -210,6 +212,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     nextScene.scaleMode = .AspectFill
                     
                     scene?.view?.presentScene(nextScene, transition: transition)
+                    nextScene.viewController = viewController
                 }
                 else if (node.name == "menu") {
                     let transition = SKTransition.fadeWithDuration(1)
@@ -218,7 +221,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     nextScene.scaleMode = .AspectFill
                     
                     scene?.view?.presentScene(nextScene, transition: transition)
-                    
+                    nextScene.viewController = viewController
                 }
                 
             }
@@ -610,6 +613,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         alive = false
         gameMusic.stop()
+        loadAd()
+        
+}
+    
+    func loadAd() {
+        let vc = viewController.storyboard!.instantiateViewControllerWithIdentifier("Ad")
+        viewController.presentViewController(vc, animated: true, completion: nil)
+
     }
     
     func bajarFireNumber() {
@@ -636,10 +647,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             hero.texture = SKTexture(imageNamed: "heroTwoHits")
         case 3:
             hero.texture = SKTexture(imageNamed: "heroThreeHits")
-        default:
+        case 4:
             hero.texture = SKTexture(imageNamed: "heroDead")
-            print("Stop")
             lost()
+        default:
+            print("Ya perdiste")
         }
     }
 }

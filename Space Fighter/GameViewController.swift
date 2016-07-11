@@ -11,9 +11,11 @@ import SpriteKit
 
 class GameViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let scene = MenuScene(size: view.frame.size)
             // Configure the view.
             let skView = self.view as! SKView
@@ -28,7 +30,11 @@ class GameViewController: UIViewController {
             
             skView.presentScene(scene)
         
+            scene.viewController = self
     }
+
+    
+    
 
     override func shouldAutorotate() -> Bool {
         return true

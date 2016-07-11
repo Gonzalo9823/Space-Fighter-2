@@ -11,6 +11,7 @@
 		EA11844B1D34330400D96DC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA11844A1D34330400D96DC4 /* GoogleService-Info.plist */; };
 		EA98D80E1D34396200778561 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA98D80D1D34396200778561 /* GoogleMobileAds.framework */; };
 		EAA873B21D3445ED00CCB8D5 /* powerUp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EAA873B11D3445ED00CCB8D5 /* powerUp.mp3 */; };
+		EAA873B41D34519B00CCB8D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA873B31D34519B00CCB8D5 /* ViewController.swift */; };
 		EAE37D4D1D342E080062981B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE37D4B1D342E080062981B /* Main.storyboard */; };
 		EAE37D5A1D342E230062981B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE37D591D342E230062981B /* AppDelegate.swift */; };
 		EAE37D5E1D342E3E0062981B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE37D5B1D342E3E0062981B /* GameScene.swift */; };
@@ -36,6 +37,7 @@
 		EA11844A1D34330400D96DC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA98D80D1D34396200778561 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		EAA873B11D3445ED00CCB8D5 /* powerUp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = powerUp.mp3; sourceTree = "<group>"; };
+		EAA873B31D34519B00CCB8D5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EAE37D401D342E080062981B /* Space Fighter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Fighter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE37D4C1D342E080062981B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAE37D531D342E080062981B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				EAE37D6D1D342E580062981B /* VCR_OSD_MONO_.otf */,
 				EAE37D6E1D342E580062981B /* CGVector+Extensions.swift */,
 				EAE37D4B1D342E080062981B /* Main.storyboard */,
+				EAA873B31D34519B00CCB8D5 /* ViewController.swift */,
 				EAE37D531D342E080062981B /* Info.plist */,
 				EA11844A1D34330400D96DC4 /* GoogleService-Info.plist */,
 			);
@@ -267,6 +270,7 @@
 				EAE37D5F1D342E3E0062981B /* MenuScene.swift in Sources */,
 				EAE37D741D342E580062981B /* CGVector+Extensions.swift in Sources */,
 				EAE37D5E1D342E3E0062981B /* GameScene.swift in Sources */,
+				EAA873B41D34519B00CCB8D5 /* ViewController.swift in Sources */,
 				EAE37D5A1D342E230062981B /* AppDelegate.swift in Sources */,
 				EAE37D721D342E580062981B /* MSButtonNode.swift in Sources */,
 			);

@@ -11,6 +11,8 @@ import SpriteKit
 
 class MenuScene: SKScene {
     
+    var viewController: GameViewController!
+
     override init(size:CGSize){
         super.init(size: size)
     }
@@ -63,6 +65,8 @@ class MenuScene: SKScene {
                 nextScene.scaleMode = .AspectFill
                 
                 scene?.view?.presentScene(nextScene, transition: transition)
+                nextScene.viewController = viewController
+
             }
         }
     }
