@@ -1,0 +1,338 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EAE37D4D1D342E080062981B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE37D4B1D342E080062981B /* Main.storyboard */; };
+		EAE37D5A1D342E230062981B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE37D591D342E230062981B /* AppDelegate.swift */; };
+		EAE37D5E1D342E3E0062981B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE37D5B1D342E3E0062981B /* GameScene.swift */; };
+		EAE37D5F1D342E3E0062981B /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE37D5C1D342E3E0062981B /* MenuScene.swift */; };
+		EAE37D601D342E3E0062981B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE37D5D1D342E3E0062981B /* GameViewController.swift */; };
+		EAE37D641D342E460062981B /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = EAE37D611D342E460062981B /* Fire.sks */; };
+		EAE37D651D342E460062981B /* Smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = EAE37D621D342E460062981B /* Smoke.sks */; };
+		EAE37D661D342E460062981B /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = EAE37D631D342E460062981B /* spark.png */; };
+		EAE37D681D342E4F0062981B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE37D671D342E4F0062981B /* Assets.xcassets */; };
+		EAE37D6F1D342E580062981B /* explsoion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EAE37D691D342E580062981B /* explsoion.mp3 */; };
+		EAE37D701D342E580062981B /* fireSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EAE37D6A1D342E580062981B /* fireSound.mp3 */; };
+		EAE37D711D342E580062981B /* backgroundSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EAE37D6B1D342E580062981B /* backgroundSound.mp3 */; };
+		EAE37D721D342E580062981B /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE37D6C1D342E580062981B /* MSButtonNode.swift */; };
+		EAE37D731D342E580062981B /* VCR_OSD_MONO_.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAE37D6D1D342E580062981B /* VCR_OSD_MONO_.otf */; };
+		EAE37D741D342E580062981B /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE37D6E1D342E580062981B /* CGVector+Extensions.swift */; };
+		EAE37D761D342F070062981B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE37D751D342F070062981B /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EAE37D401D342E080062981B /* Space Fighter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Fighter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAE37D4C1D342E080062981B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EAE37D531D342E080062981B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAE37D591D342E230062981B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EAE37D5B1D342E3E0062981B /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		EAE37D5C1D342E3E0062981B /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		EAE37D5D1D342E3E0062981B /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		EAE37D611D342E460062981B /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
+		EAE37D621D342E460062981B /* Smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Smoke.sks; sourceTree = "<group>"; };
+		EAE37D631D342E460062981B /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		EAE37D671D342E4F0062981B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EAE37D691D342E580062981B /* explsoion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explsoion.mp3; sourceTree = "<group>"; };
+		EAE37D6A1D342E580062981B /* fireSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fireSound.mp3; sourceTree = "<group>"; };
+		EAE37D6B1D342E580062981B /* backgroundSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundSound.mp3; sourceTree = "<group>"; };
+		EAE37D6C1D342E580062981B /* MSButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
+		EAE37D6D1D342E580062981B /* VCR_OSD_MONO_.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VCR_OSD_MONO_.otf; sourceTree = "<group>"; };
+		EAE37D6E1D342E580062981B /* CGVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
+		EAE37D751D342F070062981B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EAE37D3D1D342E080062981B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EAE37D371D342E080062981B = {
+			isa = PBXGroup;
+			children = (
+				EAE37D421D342E080062981B /* Space Fighter */,
+				EAE37D411D342E080062981B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EAE37D411D342E080062981B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAE37D401D342E080062981B /* Space Fighter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EAE37D421D342E080062981B /* Space Fighter */ = {
+			isa = PBXGroup;
+			children = (
+				EAE37D591D342E230062981B /* AppDelegate.swift */,
+				EAE37D5B1D342E3E0062981B /* GameScene.swift */,
+				EAE37D5C1D342E3E0062981B /* MenuScene.swift */,
+				EAE37D611D342E460062981B /* Fire.sks */,
+				EAE37D621D342E460062981B /* Smoke.sks */,
+				EAE37D631D342E460062981B /* spark.png */,
+				EAE37D671D342E4F0062981B /* Assets.xcassets */,
+				EAE37D5D1D342E3E0062981B /* GameViewController.swift */,
+				EAE37D691D342E580062981B /* explsoion.mp3 */,
+				EAE37D6A1D342E580062981B /* fireSound.mp3 */,
+				EAE37D6B1D342E580062981B /* backgroundSound.mp3 */,
+				EAE37D751D342F070062981B /* LaunchScreen.storyboard */,
+				EAE37D6C1D342E580062981B /* MSButtonNode.swift */,
+				EAE37D6D1D342E580062981B /* VCR_OSD_MONO_.otf */,
+				EAE37D6E1D342E580062981B /* CGVector+Extensions.swift */,
+				EAE37D4B1D342E080062981B /* Main.storyboard */,
+				EAE37D531D342E080062981B /* Info.plist */,
+			);
+			path = "Space Fighter";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EAE37D3F1D342E080062981B /* Space Fighter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAE37D561D342E080062981B /* Build configuration list for PBXNativeTarget "Space Fighter" */;
+			buildPhases = (
+				EAE37D3C1D342E080062981B /* Sources */,
+				EAE37D3D1D342E080062981B /* Frameworks */,
+				EAE37D3E1D342E080062981B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Space Fighter";
+			productName = "Space Fighter";
+			productReference = EAE37D401D342E080062981B /* Space Fighter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EAE37D381D342E080062981B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Gonzalo Caballero";
+				TargetAttributes = {
+					EAE37D3F1D342E080062981B = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 2R2X8Y69A9;
+					};
+				};
+			};
+			buildConfigurationList = EAE37D3B1D342E080062981B /* Build configuration list for PBXProject "Space Fighter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EAE37D371D342E080062981B;
+			productRefGroup = EAE37D411D342E080062981B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EAE37D3F1D342E080062981B /* Space Fighter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EAE37D3E1D342E080062981B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE37D731D342E580062981B /* VCR_OSD_MONO_.otf in Resources */,
+				EAE37D661D342E460062981B /* spark.png in Resources */,
+				EAE37D701D342E580062981B /* fireSound.mp3 in Resources */,
+				EAE37D711D342E580062981B /* backgroundSound.mp3 in Resources */,
+				EAE37D641D342E460062981B /* Fire.sks in Resources */,
+				EAE37D6F1D342E580062981B /* explsoion.mp3 in Resources */,
+				EAE37D651D342E460062981B /* Smoke.sks in Resources */,
+				EAE37D681D342E4F0062981B /* Assets.xcassets in Resources */,
+				EAE37D761D342F070062981B /* LaunchScreen.storyboard in Resources */,
+				EAE37D4D1D342E080062981B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EAE37D3C1D342E080062981B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE37D601D342E3E0062981B /* GameViewController.swift in Sources */,
+				EAE37D5F1D342E3E0062981B /* MenuScene.swift in Sources */,
+				EAE37D741D342E580062981B /* CGVector+Extensions.swift in Sources */,
+				EAE37D5E1D342E3E0062981B /* GameScene.swift in Sources */,
+				EAE37D5A1D342E230062981B /* AppDelegate.swift in Sources */,
+				EAE37D721D342E580062981B /* MSButtonNode.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EAE37D4B1D342E080062981B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAE37D4C1D342E080062981B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EAE37D541D342E080062981B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EAE37D551D342E080062981B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EAE37D571D342E080062981B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Space Fighter/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gonzalo.Space-Fighter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		EAE37D581D342E080062981B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Space Fighter/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gonzalo.Space-Fighter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EAE37D3B1D342E080062981B /* Build configuration list for PBXProject "Space Fighter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAE37D541D342E080062981B /* Debug */,
+				EAE37D551D342E080062981B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAE37D561D342E080062981B /* Build configuration list for PBXNativeTarget "Space Fighter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAE37D571D342E080062981B /* Debug */,
+				EAE37D581D342E080062981B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EAE37D381D342E080062981B /* Project object */;
+}
