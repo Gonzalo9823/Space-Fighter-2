@@ -91,7 +91,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Timers
         
-        timer2 = NSTimer.scheduledTimerWithTimeInterval(0.2, target:self, selector: Selector("bajarFireNumber"), userInfo: nil, repeats: true)
+        timer2 = NSTimer.scheduledTimerWithTimeInterval(0.3, target:self, selector: Selector("bajarFireNumber"), userInfo: nil, repeats: true)
         
         //Score
         
@@ -239,13 +239,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if contact.bodyA.node!.name == "meteor" {
                 
                 physicsObjectsToRemove.append(contact.bodyA.node!)
-                disparo.removeFromParent()
+                physicsObjectsToRemove.append(disparo)
                 
                 let particles = SKEmitterNode(fileNamed: "Smoke")!
                 particles.position = contact.bodyA.node!.position
                 particles.numParticlesToEmit = 20
                 addChild(particles)
                 self.runAction(explosion)
+                
                 if alive {
                     score += 1
                 }
@@ -260,26 +261,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 particles.numParticlesToEmit = 20
                 addChild(particles)
                 self.runAction(explosion)
+                
                 if alive {
                     score += 1
                 }
-                numberOfHits = 0
             }
         }
         
         if collision == Fisica.bullets | Fisica.objectPowerUp {
-            print("LAS BALAS Y LOS POWERUPS SE TOCAN")
             if contact.bodyA.node!.name == "powerUpMeteor" {
                 
                 physicsObjectsToRemove.append(contact.bodyA.node!)
-                disparo.removeFromParent()
+                physicsObjectsToRemove.append(disparo)
                 
                 let particles = SKEmitterNode(fileNamed: "Smoke")!
                 particles.position = contact.bodyA.node!.position
                 particles.numParticlesToEmit = 20
                 addChild(particles)
                 
-                self.runAction(explosion)
+                let sound = SKAction.playSoundFileNamed("powerUp", waitForCompletion: false)
+                self.runAction(sound)
+                
                 if alive {
                     score += 1
                 }
@@ -291,14 +293,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             else if contact.bodyB.node!.name == "powerUpMeteor" {
                 
                 physicsObjectsToRemove.append(contact.bodyB.node!)
-                disparo.removeFromParent()
+                physicsObjectsToRemove.append(disparo)
                 
                 let particles = SKEmitterNode(fileNamed: "Smoke")!
                 particles.position = contact.bodyB.node!.position
                 particles.numParticlesToEmit = 20
                 addChild(particles)
                 
-                self.runAction(explosion)
+                let sound = SKAction.playSoundFileNamed("powerUp", waitForCompletion: false)
+                self.runAction(sound)
+                
+                
                 if alive {
                     score += 1
                 }
@@ -347,7 +352,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             if contact.bodyA.node!.name == "hero" {
                 
-                numberOfHits += 1
                 
                 physicsObjectsToRemove.append(contact.bodyB.node!)
                 
@@ -357,10 +361,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 addChild(fire)
                 self.runAction(explosion)
                 
-                objectAndPlayerCollides()
             }
         } else if contact.bodyB.node!.name == "hero"  {
-            numberOfHits += 1
             
             physicsObjectsToRemove.append(contact.bodyA.node!)
             
@@ -370,7 +372,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(fire)
             self.runAction(explosion)
             
-            objectAndPlayerCollides()
         }
         
     }
@@ -404,6 +405,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             timesFire.texture = SKTexture(imageNamed: "3fire")
             canFire = false
         }
+       
         hero.zRotation = getAngle() - halfPie
         
         let acutualBestScore = bestScore.integerForKey("bestScore")
@@ -543,8 +545,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         disparo.zRotation = getAngle() + halfPie
         
         
-        let moverX = SKAction.moveToX(getX(getAngle()), duration: 3)
-        let moverY = SKAction.moveToY(getY(getAngle()), duration: 3)
+//        let moverX = SKAction.moveToX(getX(getAngle()), duration: 3)
+//        let moverY = SKAction.moveToY(getY(getAngle()), duration: 3)
+        
+        let x = getX(getAngle())
+        let y = getY(getAngle())
+        
+        
+        
+        let mover = SKAction.moveTo(CGPoint(x: x, y: y), duration: 3)
+        // SKAction.moveBy(<#T##delta: CGVector##CGVector#>, duration: <#T##NSTimeInterval#>)
+        /// CGVector(dx: <#T##CGFloat#>, dy: <#T##CGFloat#>)
         
         
         disparo.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: 3, height: 9))
@@ -555,8 +566,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         disparo.physicsBody?.contactTestBitMask = Fisica.object
         disparo.physicsBody?.collisionBitMask   = Fisica.none
         
-        disparo.runAction(moverX)
-        disparo.runAction(moverY)
+//        disparo.runAction(moverX)
+//        disparo.runAction(moverY)
+        disparo.runAction(mover)
         
         let fireSFX = SKAction.playSoundFileNamed("fireSound", waitForCompletion: false)
         
@@ -625,6 +637,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         case 3:
             hero.texture = SKTexture(imageNamed: "heroThreeHits")
         default:
+            hero.texture = SKTexture(imageNamed: "heroDead")
             print("Stop")
             lost()
         }

@@ -1,0 +1,6 @@
+framework module Pods_Space_Fighter {
+  umbrella header "Pods-Space Fighter-umbrella.h"
+
+  export *
+  module * { export * }
+}

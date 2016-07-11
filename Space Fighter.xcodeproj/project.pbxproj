@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A063E5CECEFF99E9286FE06B /* Pods_Space_Fighter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C9CC76B3688FD838947F33 /* Pods_Space_Fighter.framework */; };
+		EA11844B1D34330400D96DC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA11844A1D34330400D96DC4 /* GoogleService-Info.plist */; };
+		EA98D80E1D34396200778561 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA98D80D1D34396200778561 /* GoogleMobileAds.framework */; };
+		EAA873B21D3445ED00CCB8D5 /* powerUp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EAA873B11D3445ED00CCB8D5 /* powerUp.mp3 */; };
 		EAE37D4D1D342E080062981B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE37D4B1D342E080062981B /* Main.storyboard */; };
 		EAE37D5A1D342E230062981B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE37D591D342E230062981B /* AppDelegate.swift */; };
 		EAE37D5E1D342E3E0062981B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE37D5B1D342E3E0062981B /* GameScene.swift */; };
@@ -26,6 +30,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01C9CC76B3688FD838947F33 /* Pods_Space_Fighter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Space_Fighter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		032B562AD0FFDD3135DC9648 /* Pods-Space Fighter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Space Fighter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Space Fighter/Pods-Space Fighter.debug.xcconfig"; sourceTree = "<group>"; };
+		5935CDFEA1E4BCF8C7F3CB0A /* Pods-Space Fighter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Space Fighter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Space Fighter/Pods-Space Fighter.release.xcconfig"; sourceTree = "<group>"; };
+		EA11844A1D34330400D96DC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EA98D80D1D34396200778561 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		EAA873B11D3445ED00CCB8D5 /* powerUp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = powerUp.mp3; sourceTree = "<group>"; };
 		EAE37D401D342E080062981B /* Space Fighter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Fighter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE37D4C1D342E080062981B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAE37D531D342E080062981B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,17 +61,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA98D80E1D34396200778561 /* GoogleMobileAds.framework in Frameworks */,
+				A063E5CECEFF99E9286FE06B /* Pods_Space_Fighter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1325887B2A9A70226EF51309 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01C9CC76B3688FD838947F33 /* Pods_Space_Fighter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		483BE342C34504405619DBCF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				032B562AD0FFDD3135DC9648 /* Pods-Space Fighter.debug.xcconfig */,
+				5935CDFEA1E4BCF8C7F3CB0A /* Pods-Space Fighter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EAE37D371D342E080062981B = {
 			isa = PBXGroup;
 			children = (
+				EA98D80D1D34396200778561 /* GoogleMobileAds.framework */,
 				EAE37D421D342E080062981B /* Space Fighter */,
 				EAE37D411D342E080062981B /* Products */,
+				483BE342C34504405619DBCF /* Pods */,
+				1325887B2A9A70226EF51309 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +116,7 @@
 				EAE37D631D342E460062981B /* spark.png */,
 				EAE37D671D342E4F0062981B /* Assets.xcassets */,
 				EAE37D5D1D342E3E0062981B /* GameViewController.swift */,
+				EAA873B11D3445ED00CCB8D5 /* powerUp.mp3 */,
 				EAE37D691D342E580062981B /* explsoion.mp3 */,
 				EAE37D6A1D342E580062981B /* fireSound.mp3 */,
 				EAE37D6B1D342E580062981B /* backgroundSound.mp3 */,
@@ -93,6 +126,7 @@
 				EAE37D6E1D342E580062981B /* CGVector+Extensions.swift */,
 				EAE37D4B1D342E080062981B /* Main.storyboard */,
 				EAE37D531D342E080062981B /* Info.plist */,
+				EA11844A1D34330400D96DC4 /* GoogleService-Info.plist */,
 			);
 			path = "Space Fighter";
 			sourceTree = "<group>";
@@ -104,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAE37D561D342E080062981B /* Build configuration list for PBXNativeTarget "Space Fighter" */;
 			buildPhases = (
+				F769CD644B3D44C1F36B331D /* [CP] Check Pods Manifest.lock */,
 				EAE37D3C1D342E080062981B /* Sources */,
 				EAE37D3D1D342E080062981B /* Frameworks */,
 				EAE37D3E1D342E080062981B /* Resources */,
+				D56D6FA378140891239AD1A3 /* [CP] Embed Pods Frameworks */,
+				2DC02F5887AADD2C41581B43 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,12 +201,62 @@
 				EAE37D6F1D342E580062981B /* explsoion.mp3 in Resources */,
 				EAE37D651D342E460062981B /* Smoke.sks in Resources */,
 				EAE37D681D342E4F0062981B /* Assets.xcassets in Resources */,
+				EA11844B1D34330400D96DC4 /* GoogleService-Info.plist in Resources */,
 				EAE37D761D342F070062981B /* LaunchScreen.storyboard in Resources */,
 				EAE37D4D1D342E080062981B /* Main.storyboard in Resources */,
+				EAA873B21D3445ED00CCB8D5 /* powerUp.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2DC02F5887AADD2C41581B43 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Space Fighter/Pods-Space Fighter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D56D6FA378140891239AD1A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Space Fighter/Pods-Space Fighter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F769CD644B3D44C1F36B331D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EAE37D3C1D342E080062981B /* Sources */ = {
@@ -286,10 +373,15 @@
 		};
 		EAE37D571D342E080062981B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 032B562AD0FFDD3135DC9648 /* Pods-Space Fighter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Space Fighter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gonzalo.Space-Fighter";
@@ -300,10 +392,15 @@
 		};
 		EAE37D581D342E080062981B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5935CDFEA1E4BCF8C7F3CB0A /* Pods-Space Fighter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Space Fighter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gonzalo.Space-Fighter";
@@ -331,6 +428,7 @@
 				EAE37D581D342E080062981B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
