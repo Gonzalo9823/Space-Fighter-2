@@ -565,7 +565,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         
-        let mover = SKAction.moveTo(CGPoint(x: x, y: y), duration: 3)
+        //let mover = SKAction.moveTo(CGPoint(x: x, y: y), duration: 3)
         // SKAction.moveBy(<#T##delta: CGVector##CGVector#>, duration: <#T##NSTimeInterval#>)
         /// CGVector(dx: <#T##CGFloat#>, dy: <#T##CGFloat#>)
         
@@ -580,7 +580,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //        disparo.runAction(moverX)
         //        disparo.runAction(moverY)
-        disparo.runAction(mover)
+        //disparo.runAction(mover)
+        
+        let angle = CGVector(angle: getAngle())
+        let vector = angle * 800
+        print(angle, vector)
+        
+        disparo.physicsBody!.velocity = vector
+
+        
         
         let fireSFX = SKAction.playSoundFileNamed("fireSound", waitForCompletion: false)
         
@@ -590,7 +598,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         if canFire == true {
-            
             addChild(disparo)
             self.runAction(fireSFX)
         }
