@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="hero" translatesAutoresizingMaskIntoConstraints="NO" id="bsT-Se-d1H">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="heroSC" translatesAutoresizingMaskIntoConstraints="NO" id="bsT-Se-d1H">
                                 <rect key="frame" x="208" y="48" width="251" height="166"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="251" id="ULP-U1-xff"/>
@@ -50,7 +50,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="hero" width="1729" height="1146"/>
+        <image name="heroSC" width="1729" height="1146"/>
         <image name="title" width="2550" height="183"/>
     </resources>
 </document>
