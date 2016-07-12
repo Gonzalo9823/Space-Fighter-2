@@ -55,10 +55,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let halfPie =  CGFloat(M_PI / 2)
     
     
-    
     override func didMoveToView(view: SKView) {
         
-        
+        let scaleRatio = self.frame.width / 667
         // SOUNDS
         
         let path = NSBundle.mainBundle().pathForResource("backgroundSound.mp3", ofType:nil)!
@@ -85,7 +84,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //Barra de disparo
         timesFire = SKSpriteNode(imageNamed: "0fires")
         timesFire.position = CGPoint(x: self.frame.width / 2 - 150, y: self.frame.height / 2 + 150)
-        timesFire.setScale(0.1)
+        timesFire.setScale(0.1 * scaleRatio)
         addChild(timesFire)
         
         //Para la Fisica
@@ -151,7 +150,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.randomPowerUp()
         }
         
-        let moveFaster = SKAction.runBlock { 
+        let moveFaster = SKAction.runBlock {
             self.moverMasRapido()
         }
         
@@ -175,7 +174,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         removeActionForKey("meteors")
         tiempoEntreCreacion *= 0.8
         print("Second time : \(tiempoEntreCreacion)")
-
+        
         
         let meteorWait = SKAction.waitForDuration(tiempoEntreCreacion)
         let crear = SKAction.runBlock {
@@ -330,7 +329,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 fire.position = contact.bodyA.node!.position
                 fire.numParticlesToEmit = 50
                 addChild(fire)
-                self.runAction(explosion)
+                if alive {
+                    self.runAction(explosion)
+                }
                 
                 objectAndPlayerCollides()
                 
@@ -346,7 +347,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             fire.position = contact.bodyB.node!.position
             fire.numParticlesToEmit = 50
             addChild(fire)
-            self.runAction(explosion)
+            
+            if alive {
+                self.runAction(explosion)
+            }
             
             objectAndPlayerCollides()
         }
@@ -362,7 +366,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 fire.position = contact.bodyA.node!.position
                 fire.numParticlesToEmit = 50
                 addChild(fire)
-                self.runAction(explosion)
+                
+                if alive {
+                    self.runAction(explosion)
+                }
                 
             }
         } else if contact.bodyB.node!.name == "hero"  {
@@ -373,8 +380,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             fire.position = contact.bodyB.node!.position
             fire.numParticlesToEmit = 50
             addChild(fire)
-            self.runAction(explosion)
             
+            if alive {
+                self.runAction(explosion)
+            }
         }
         
     }
@@ -408,7 +417,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             timesFire.texture = SKTexture(imageNamed: "3fire")
             canFire = false
         }
-       
+        
         hero.zRotation = getAngle() - halfPie
         
         let acutualBestScore = bestScore.integerForKey("bestScore")
@@ -548,8 +557,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         disparo.zRotation = getAngle() + halfPie
         
         
-//        let moverX = SKAction.moveToX(getX(getAngle()), duration: 3)
-//        let moverY = SKAction.moveToY(getY(getAngle()), duration: 3)
+        //        let moverX = SKAction.moveToX(getX(getAngle()), duration: 3)
+        //        let moverY = SKAction.moveToY(getY(getAngle()), duration: 3)
         
         let x = getX(getAngle())
         let y = getY(getAngle())
@@ -569,8 +578,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         disparo.physicsBody?.contactTestBitMask = Fisica.object
         disparo.physicsBody?.collisionBitMask   = Fisica.none
         
-//        disparo.runAction(moverX)
-//        disparo.runAction(moverY)
+        //        disparo.runAction(moverX)
+        //        disparo.runAction(moverY)
         disparo.runAction(mover)
         
         let fireSFX = SKAction.playSoundFileNamed("fireSound", waitForCompletion: false)
@@ -591,6 +600,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func lost() {
         
         removeAllActions()
+        alive = false
         
         gameOver = SKLabelNode(fontNamed: "VCR OSD Mono")
         gameOver.text = "Game Over!"
@@ -611,16 +621,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         menuButton.setScale(0.08)
         addChild(menuButton)
         
-        alive = false
+       
         gameMusic.stop()
         loadAd()
         
-}
+    }
     
     func loadAd() {
         let vc = viewController.storyboard!.instantiateViewControllerWithIdentifier("Ad")
         viewController.presentViewController(vc, animated: true, completion: nil)
-
+        
     }
     
     func bajarFireNumber() {

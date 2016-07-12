@@ -27,15 +27,19 @@ class MenuScene: SKScene {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        let scaleRatio = self.frame.width / 667
+
         start = SKSpriteNode(imageNamed: "start")
         start.name = "Game Button"
         start.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 - 60)
-        start.setScale(0.1)
+        start.setScale(0.1 * scaleRatio)
         addChild(start)
         
         title = SKSpriteNode(imageNamed: "title")
         title.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 + 80)
-        title.setScale(0.3)
+        
+        title.setScale(0.3 * scaleRatio)
+        
         addChild(title)
         
         highScoreLabel = SKLabelNode(fontNamed: "VCR OSD Mono")

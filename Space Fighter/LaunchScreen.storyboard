@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,14 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="hero" translatesAutoresizingMaskIntoConstraints="NO" id="bsT-Se-d1H">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="hero" translatesAutoresizingMaskIntoConstraints="NO" id="bsT-Se-d1H">
                                 <rect key="frame" x="208" y="48" width="251" height="166"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="251" id="ULP-U1-xff"/>
+                                </constraints>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="wsK-pM-Y1H">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="wsK-pM-Y1H">
                                 <rect key="frame" x="84" y="229" width="499" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="uc8-p2-VSp"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="bsT-Se-d1H" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Chj-gv-eYT"/>
+                            <constraint firstItem="wsK-pM-Y1H" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="64" id="YQl-dE-EoU"/>
+                            <constraint firstItem="bsT-Se-d1H" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="28" id="bWS-ZV-amX"/>
+                            <constraint firstItem="bsT-Se-d1H" firstAttribute="centerX" secondItem="wsK-pM-Y1H" secondAttribute="centerX" id="eCa-xw-j03"/>
+                            <constraint firstItem="wsK-pM-Y1H" firstAttribute="top" secondItem="bsT-Se-d1H" secondAttribute="bottom" constant="15" id="eSS-Rf-BzX"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="wsK-pM-Y1H" secondAttribute="bottom" constant="108" id="sO1-mu-izH"/>
+                        </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
