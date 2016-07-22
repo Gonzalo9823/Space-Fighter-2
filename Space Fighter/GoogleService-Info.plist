@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>769159176199-p961apo2ri2utjvjhrho0nme19jrlr2s.apps.googleusercontent.com</string>
+	<string>769159176199-fgrankfjc0jt7656ms0cj7bs6p0f0l6m.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.769159176199-p961apo2ri2utjvjhrho0nme19jrlr2s</string>
+	<string>com.googleusercontent.apps.769159176199-fgrankfjc0jt7656ms0cj7bs6p0f0l6m</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDtOuPYGlB9rRvUL7ZjAwW0qHoe8OJCC-4</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.gonzalo.Space-Fighter</string>
+	<string>com.MarieFaureCuraz.SpaceFighter</string>
 	<key>PROJECT_ID</key>
 	<string>space-fighter-97ebd</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:769159176199:ios:c5039f53cd02f07b</string>
+	<string>1:769159176199:ios:2ec875428b3547b6</string>
 	<key>DATABASE_URL</key>
 	<string>https://space-fighter-97ebd.firebaseio.com</string>
 </dict>
