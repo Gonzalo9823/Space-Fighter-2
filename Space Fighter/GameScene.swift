@@ -23,6 +23,8 @@ let bestScore = NSUserDefaults.standardUserDefaults()
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    let defaults = NSUserDefaults.standardUserDefaults()
+    
     var viewController: GameViewController!
     
     var hero : SKSpriteNode!
@@ -55,20 +57,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let halfPie =  CGFloat(M_PI / 2)
     
     
+    
     override func didMoveToView(view: SKView) {
+        
+        let playMusic = defaults.boolForKey("Musica")
+        print("--------------------------------------")
+        print(playMusic)
         
         let scaleRatio = self.frame.width / 667
         // SOUNDS
-        
-        let path = NSBundle.mainBundle().pathForResource("backgroundSound.mp3", ofType:nil)!
-        let url = NSURL(fileURLWithPath: path)
-        
-        do {
-            let sound = try AVAudioPlayer(contentsOfURL: url)
-            gameMusic = sound
-            sound.play()
-        } catch {
-            // couldn't load file :(
+        if playMusic == false {
+            let path = NSBundle.mainBundle().pathForResource("backgroundSound.mp3", ofType:nil)!
+            let url = NSURL(fileURLWithPath: path)
+            
+            do {
+                let sound = try AVAudioPlayer(contentsOfURL: url)
+                gameMusic = sound
+                sound.play()
+            } catch {
+                // couldn't load file :(
+            }
         }
         
         //Animacion de meteoro
@@ -92,7 +100,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Timers
         
-        timer2 = NSTimer.scheduledTimerWithTimeInterval(0.3, target:self, selector: Selector("bajarFireNumber"), userInfo: nil, repeats: true)
+        timer2 = NSTimer.scheduledTimerWithTimeInterval(0.3, target:self, selector: #selector(GameScene.bajarFireNumber), userInfo: nil, repeats: true)
         
         //Score
         
@@ -186,6 +194,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
         for touch in touches {
             let location = touch.locationInNode(self)
             if let node = self.nodeAtPoint(location) as? SKSpriteNode {
@@ -234,6 +243,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didBeginContact(contact: SKPhysicsContact) {
         
+        let playMusic = defaults.boolForKey("Musica")
+        
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         if collision == Fisica.bullets | Fisica.object {
@@ -247,7 +258,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 particles.position = contact.bodyA.node!.position
                 particles.numParticlesToEmit = 20
                 addChild(particles)
-                self.runAction(explosion)
+                if playMusic == false {
+                    self.runAction(explosion)
+                }
                 
                 if alive {
                     score += 1
@@ -262,7 +275,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 particles.position = contact.bodyB.node!.position
                 particles.numParticlesToEmit = 20
                 addChild(particles)
-                self.runAction(explosion)
+                if playMusic == false {
+                    self.runAction(explosion)
+                }
                 
                 if alive {
                     score += 1
@@ -282,7 +297,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 addChild(particles)
                 
                 let sound = SKAction.playSoundFileNamed("powerUp", waitForCompletion: false)
-                self.runAction(sound)
+                if playMusic == false {
+                    self.runAction(sound)
+                }
                 
                 if alive {
                     score += 1
@@ -303,8 +320,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 addChild(particles)
                 
                 let sound = SKAction.playSoundFileNamed("powerUp", waitForCompletion: false)
-                self.runAction(sound)
-                
+                if playMusic == false {
+                    self.runAction(sound)
+                }
                 
                 if alive {
                     score += 1
@@ -330,7 +348,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 fire.numParticlesToEmit = 50
                 addChild(fire)
                 if alive {
-                    self.runAction(explosion)
+                    if playMusic == false {
+                        self.runAction(explosion)
+                    }
                 }
                 
                 objectAndPlayerCollides()
@@ -349,7 +369,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(fire)
             
             if alive {
-                self.runAction(explosion)
+                if playMusic == false {
+                    self.runAction(explosion)
+                }
             }
             
             objectAndPlayerCollides()
@@ -560,9 +582,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //        let moverX = SKAction.moveToX(getX(getAngle()), duration: 3)
         //        let moverY = SKAction.moveToY(getY(getAngle()), duration: 3)
         
-        let x = getX(getAngle())
-        let y = getY(getAngle())
-        
         
         
         //let mover = SKAction.moveTo(CGPoint(x: x, y: y), duration: 3)
@@ -587,7 +606,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         print(angle, vector)
         
         disparo.physicsBody!.velocity = vector
-
+        
         
         
         let fireSFX = SKAction.playSoundFileNamed("fireSound", waitForCompletion: false)
@@ -598,13 +617,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         if canFire == true {
+            let playMusic = defaults.boolForKey("Musica")
             addChild(disparo)
-            self.runAction(fireSFX)
+            if playMusic == false {
+                self.runAction(fireSFX)
+            }
         }
         
     }
     
     func lost() {
+        
+        let playMusic = defaults.boolForKey("Musica")
         
         removeAllActions()
         alive = false
@@ -628,8 +652,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         menuButton.setScale(0.08)
         addChild(menuButton)
         
-       
-        gameMusic.stop()
+        
+        if playMusic == false {
+            gameMusic.stop()
+        }
         loadAd()
         
     }
