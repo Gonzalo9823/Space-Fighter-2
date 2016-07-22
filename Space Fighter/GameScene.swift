@@ -23,6 +23,7 @@ let bestScore = NSUserDefaults.standardUserDefaults()
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    
     let defaults = NSUserDefaults.standardUserDefaults()
     
     var viewController: GameViewController!
@@ -59,12 +60,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     override func didMoveToView(view: SKView) {
+        let scaleRatio = self.frame.width / 667
+        let scaleRatioiPhone5 = self.frame.width / 568
         
         let playMusic = defaults.boolForKey("Musica")
         print("--------------------------------------")
         print(playMusic)
         
-        let scaleRatio = self.frame.width / 667
         // SOUNDS
         if playMusic == false {
             let path = NSBundle.mainBundle().pathForResource("backgroundSound.mp3", ofType:nil)!
@@ -91,8 +93,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Barra de disparo
         timesFire = SKSpriteNode(imageNamed: "0fires")
-        timesFire.position = CGPoint(x: self.frame.width / 2 - 150, y: self.frame.height / 2 + 150)
         timesFire.setScale(0.1 * scaleRatio)
+
+        if scaleRatioiPhone5 == 1 {
+            timesFire.position = CGPoint(x: self.frame.width / 2 - 150, y: self.frame.height / 2 + 120)
+        }
+        else {
+            timesFire.position = CGPoint(x: self.frame.width / 2 - 150, y: self.frame.height / 2 + 150)
+        }
+        
         addChild(timesFire)
         
         //Para la Fisica
@@ -108,7 +117,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.text = "Score \(score)"
         scoreLabel.horizontalAlignmentMode = .Center
         scoreLabel.fontSize = 40
-        scoreLabel.position = CGPoint(x: self.frame.width / 2 + 150, y: self.frame.height / 2 + 135)
+        
+        if scaleRatioiPhone5 == 1 {
+            scoreLabel.position = CGPoint(x: self.frame.width / 2 + 150, y: self.frame.height / 2 + 105)
+        }
+        else {
+            scoreLabel.position = CGPoint(x: self.frame.width / 2 + 150, y: self.frame.height / 2 + 135)
+        }
+        
         addChild(scoreLabel)
         
         
@@ -661,8 +677,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func loadAd() {
-        let vc = viewController.storyboard!.instantiateViewControllerWithIdentifier("Ad")
-        viewController.presentViewController(vc, animated: true, completion: nil)
+        //let vc = viewController.storyboard!.instantiateViewControllerWithIdentifier("Ad")
+        //viewController.presentViewController(vc, animated: true, completion: nil)
+        viewController.add()
         
     }
     

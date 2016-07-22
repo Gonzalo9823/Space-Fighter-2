@@ -8,10 +8,12 @@
 
 import UIKit
 import SpriteKit
+import GoogleMobileAds
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController,GADInterstitialDelegate  {
 
-    
+    var interstitial: GADInterstitial!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,9 @@ class GameViewController: UIViewController {
             skView.presentScene(scene)
         
             scene.viewController = self
+        
+        interstitial = createAndLoadInterstitial()
+
     }
 
     
@@ -55,5 +60,29 @@ class GameViewController: UIViewController {
 
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    func add() {
+        if interstitial != nil {
+            if ((interstitial?.isReady) != nil) {
+                interstitial?.presentFromRootViewController(self)
+            }
+        }
+    }
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let request = GADRequest()
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-1111040965253145/4016435916")
+        request.testDevices = ["27496ACE-8FD5-4156-9B94-73DB4330EFB8"]
+        
+        interstitial.delegate = self
+        interstitial.loadRequest(request)
+        return interstitial
+        
+    }
+    
+    
+    func interstitialDidDismissScreen(ad: GADInterstitial!) {
+        interstitial = createAndLoadInterstitial()
     }
 }
