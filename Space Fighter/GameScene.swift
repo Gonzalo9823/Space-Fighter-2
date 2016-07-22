@@ -62,6 +62,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
         let scaleRatio = self.frame.width / 667
         let scaleRatioiPhone5 = self.frame.width / 568
+        let scaleRatioiPhone4 = self.frame.width / 480
         
         let playMusic = defaults.boolForKey("Musica")
         print("--------------------------------------")
@@ -98,6 +99,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if scaleRatioiPhone5 == 1 {
             timesFire.position = CGPoint(x: self.frame.width / 2 - 150, y: self.frame.height / 2 + 120)
         }
+            
+        else if scaleRatioiPhone4 == 1 {
+            timesFire.position = CGPoint(x: self.frame.width / 2 - 150, y: self.frame.height / 2 + 110)
+
+        }
         else {
             timesFire.position = CGPoint(x: self.frame.width / 2 - 150, y: self.frame.height / 2 + 150)
         }
@@ -120,6 +126,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if scaleRatioiPhone5 == 1 {
             scoreLabel.position = CGPoint(x: self.frame.width / 2 + 150, y: self.frame.height / 2 + 105)
+        }
+            
+        else if scaleRatioiPhone4 == 1 {
+            scoreLabel.position = CGPoint(x: self.frame.width / 2 + 150, y: self.frame.height / 2 + 95)
+
         }
         else {
             scoreLabel.position = CGPoint(x: self.frame.width / 2 + 150, y: self.frame.height / 2 + 135)
