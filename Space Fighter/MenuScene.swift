@@ -102,6 +102,8 @@ class MenuScene: SKScene {
                 let nextScene = GameScene(size: scene!.size)
                 nextScene.scaleMode = .AspectFill
                 
+                UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+                
                 scene?.view?.presentScene(nextScene, transition: transition)
                 nextScene.viewController = viewController
 

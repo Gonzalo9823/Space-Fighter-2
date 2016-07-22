@@ -9,4 +9,5 @@ target 'Space Fighter' do
 pod 'Firebase'
 pod 'Firebase/AdMob'
 pod 'Firebase/Core'
+pod 'Firebase/Messaging'
 end
