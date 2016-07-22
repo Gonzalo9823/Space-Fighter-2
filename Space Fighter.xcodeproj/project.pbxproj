@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A063E5CECEFF99E9286FE06B /* Pods_Space_Fighter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C9CC76B3688FD838947F33 /* Pods_Space_Fighter.framework */; };
-		EA11844B1D34330400D96DC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA11844A1D34330400D96DC4 /* GoogleService-Info.plist */; };
 		EA4F38B01D428B9E00E42D87 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4F38AF1D428B9E00E42D87 /* GoogleMobileAds.framework */; };
 		EA4F38B21D429EB100E42D87 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA4F38B11D429EB100E42D87 /* Info.plist */; };
 		EA4F38B41D429EC400E42D87 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA4F38B31D429EC400E42D87 /* GoogleService-Info.plist */; };
