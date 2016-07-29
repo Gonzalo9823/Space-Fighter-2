@@ -14,7 +14,7 @@ import SpriteKit
 class MenuScene: SKScene {
     
     var viewController: GameViewController!
-
+    
     override init(size:CGSize){
         super.init(size: size)
     }
@@ -27,17 +27,35 @@ class MenuScene: SKScene {
     var title : SKSpriteNode!
     var highScoreLabel : SKLabelNode!
     var musica : SKSpriteNode!
+    var ayuda : SKSpriteNode!
+    var imagenAyuda : SKSpriteNode!
     
     let defaults = NSUserDefaults.standardUserDefaults()
     var playMusic = true
     
+    var preferredLanguages : NSLocale!
+    
+    var espanol = false
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
+        let pre = NSLocale.preferredLanguages()[0]
+        
+        print(pre)
+        
+        if (pre.rangeOfString("es") != nil) {
+            espanol = true
+        }
         
         let scaleRatio = self.frame.width / 667
-
-        start = SKSpriteNode(imageNamed: "start")
+        
+        if espanol {
+            start = SKSpriteNode(imageNamed: "jugar")
+        }
+        else {
+            start = SKSpriteNode(imageNamed: "start")
+        }
         start.name = "Game Button"
         start.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 - 60)
         start.setScale(0.1 * scaleRatio)
@@ -52,16 +70,52 @@ class MenuScene: SKScene {
         
         highScoreLabel = SKLabelNode(fontNamed: "VCR OSD Mono")
         let superScore = bestScore.integerForKey("bestScore")
-        highScoreLabel.text = "High Score \(superScore)"
+        
+        if espanol {
+            highScoreLabel.text = "Mejor Puntaje \(superScore)"
+        }
+        else {
+            highScoreLabel.text = "High Score \(superScore)"
+        }
         highScoreLabel.horizontalAlignmentMode = .Center
         highScoreLabel.fontSize = 40
         highScoreLabel.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 - 5)
         addChild(highScoreLabel)
         
+        //Ayuda
+        
+        ayuda = SKSpriteNode(imageNamed: "ayuda")
+        ayuda.name = "Ayuda"
+        ayuda.position = CGPoint(x: self.frame.width / 2 + 30 , y: self.frame.height / 2 - 130)
+        ayuda.setScale(0.15 * scaleRatio)
+        addChild(ayuda)
+        
+        if espanol {
+            imagenAyuda = SKSpriteNode(imageNamed: "ImagenAyudaEspanol")
+            imagenAyuda.name = "Imagen Ayuda"
+            imagenAyuda.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
+            imagenAyuda.zPosition = 4
+            //imagenAyuda.setScale(0.55 * scaleRatio)
+            imagenAyuda.size = CGSize(width: self.frame.width, height:self.frame.height)
+            imagenAyuda.alpha = 0
+            addChild(imagenAyuda)
+        }
+            
+        else {
+            imagenAyuda = SKSpriteNode(imageNamed: "imagenAyuda")
+            imagenAyuda.name = "Imagen Ayuda"
+            imagenAyuda.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
+            imagenAyuda.zPosition = 4
+            //imagenAyuda.setScale(0.55 * scaleRatio)
+            imagenAyuda.size = CGSize(width: self.frame.width, height:self.frame.height)
+            imagenAyuda.alpha = 0
+            addChild(imagenAyuda)
+        }
+        
+        
+        
         //Boton de musica
         
-        
-      
         
         print("------------------------------------------------")
         print(defaults.boolForKey("Musica"))
@@ -69,17 +123,17 @@ class MenuScene: SKScene {
         if defaults.boolForKey("Musica") {
             musica = SKSpriteNode(imageNamed: "noMusic")
             musica.name = "Music"
-            musica.position = CGPoint(x: self.frame.width / 2 , y: self.frame.height / 2 - 130)
+            musica.position = CGPoint(x: self.frame.width / 2 - 30 , y: self.frame.height / 2 - 130)
             musica.setScale(0.15 * scaleRatio)
             addChild(musica)
             
         }
-        
+            
         else {
             
             musica = SKSpriteNode(imageNamed: "music")
             musica.name = "Music"
-            musica.position = CGPoint(x: self.frame.width / 2 , y: self.frame.height / 2 - 130)
+            musica.position = CGPoint(x: self.frame.width / 2 - 30 , y: self.frame.height / 2 - 130)
             musica.setScale(0.15 * scaleRatio)
             addChild(musica)
         }
@@ -106,7 +160,7 @@ class MenuScene: SKScene {
                 
                 scene?.view?.presentScene(nextScene, transition: transition)
                 nextScene.viewController = viewController
-
+                
             }
             else if touchedNode.name == "Music" {
                 
@@ -115,12 +169,21 @@ class MenuScene: SKScene {
                     defaults.setBool(false, forKey: "Musica")
                     print("MUSIC")
                 }
-                
+                    
                 else  {
                     musica.texture = SKTexture(imageNamed: "noMusic")
                     defaults.setBool(true, forKey: "Musica")
                     print("NOMUSIC")
                 }
+            }
+                
+            else if touchedNode.name == "Ayuda" {
+                let mostrar = SKAction.fadeInWithDuration(0.4)
+                imagenAyuda.runAction(mostrar)
+            }
+            else if touchedNode.name == "Imagen Ayuda" {
+                let mostrar = SKAction.fadeOutWithDuration(0.4)
+                imagenAyuda.runAction(mostrar)
             }
         }
     }

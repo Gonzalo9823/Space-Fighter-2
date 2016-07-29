@@ -56,6 +56,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var gameMusic: AVAudioPlayer!
     var menuButton: SKSpriteNode!
     let halfPie =  CGFloat(M_PI / 2)
+    var preferredLanguages : NSLocale!
+    var espanol = false
     
     
     
@@ -63,6 +65,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let scaleRatio = self.frame.width / 667
         let scaleRatioiPhone5 = self.frame.width / 568
         let scaleRatioiPhone4 = self.frame.width / 480
+        
+        let pre = NSLocale.preferredLanguages()[0]
+        
+        print(pre)
+        
+        if (pre.rangeOfString("es") != nil) {
+            espanol = true
+        }
         
         let playMusic = defaults.boolForKey("Musica")
         print("--------------------------------------")
@@ -95,14 +105,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //Barra de disparo
         timesFire = SKSpriteNode(imageNamed: "0fires")
         timesFire.setScale(0.1 * scaleRatio)
-
+        
         if scaleRatioiPhone5 == 1 {
             timesFire.position = CGPoint(x: self.frame.width / 2 - 150, y: self.frame.height / 2 + 120)
         }
             
         else if scaleRatioiPhone4 == 1 {
             timesFire.position = CGPoint(x: self.frame.width / 2 - 150, y: self.frame.height / 2 + 110)
-
+            
         }
         else {
             timesFire.position = CGPoint(x: self.frame.width / 2 - 150, y: self.frame.height / 2 + 150)
@@ -120,7 +130,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //Score
         
         scoreLabel = SKLabelNode(fontNamed: "VCR OSD Mono")
-        scoreLabel.text = "Score \(score)"
+        if espanol {
+            scoreLabel.text = "Puntaje \(score)"
+        }
+        else {
+            scoreLabel.text = "Score \(score)"
+        }
         scoreLabel.horizontalAlignmentMode = .Center
         scoreLabel.fontSize = 40
         
@@ -130,7 +145,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         else if scaleRatioiPhone4 == 1 {
             scoreLabel.position = CGPoint(x: self.frame.width / 2 + 150, y: self.frame.height / 2 + 95)
-
+            
         }
         else {
             scoreLabel.position = CGPoint(x: self.frame.width / 2 + 150, y: self.frame.height / 2 + 135)
@@ -417,7 +432,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 addChild(fire)
                 
                 if alive {
-                    self.runAction(explosion)
+                    if playMusic == false {
+                        self.runAction(explosion)
+                    }
                 }
                 
             }
@@ -431,7 +448,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(fire)
             
             if alive {
-                self.runAction(explosion)
+                if playMusic == false {
+                    self.runAction(explosion)
+                }
             }
         }
         
@@ -446,7 +465,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
         
         
-        scoreLabel.text = "Score \(score)"
+        if espanol {
+            scoreLabel.text = "Puntaje \(score)"
+        }
+        else {
+            scoreLabel.text = "Score \(score)"
+        }
         
         switch fireNumber {
         case 0:
@@ -661,13 +685,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         alive = false
         
         gameOver = SKLabelNode(fontNamed: "VCR OSD Mono")
-        gameOver.text = "Game Over!"
+        if espanol {
+            gameOver.text = "¡Perdiste!"
+        }
+        else {
+            gameOver.text = "Game Over!"
+        }
         gameOver.horizontalAlignmentMode = .Center
         gameOver.fontSize = 50
         gameOver.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 + 50)
         addChild(gameOver)
         
-        restartButton = SKSpriteNode(imageNamed: "restart")
+        if espanol {
+            restartButton = SKSpriteNode(imageNamed: "jugarDeNuevo")
+        }
+        else {
+            restartButton = SKSpriteNode(imageNamed: "restart")
+        }
+        
         restartButton.name = "restart"
         restartButton.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 - 60)
         restartButton.setScale(0.08)
