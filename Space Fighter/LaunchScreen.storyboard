@@ -21,25 +21,26 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="heroSC" translatesAutoresizingMaskIntoConstraints="NO" id="bsT-Se-d1H">
                                 <rect key="frame" x="208" y="48" width="251" height="166"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="251" id="ULP-U1-xff"/>
-                                    <constraint firstAttribute="width" secondItem="bsT-Se-d1H" secondAttribute="height" multiplier="251:166" id="lIU-sd-Drb"/>
+                                    <constraint firstAttribute="width" secondItem="bsT-Se-d1H" secondAttribute="height" multiplier="251:166" id="hIH-cv-uYt"/>
                                 </constraints>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="wsK-pM-Y1H">
                                 <rect key="frame" x="84" y="229" width="499" height="38"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="uc8-p2-VSp"/>
+                                    <constraint firstAttribute="width" secondItem="wsK-pM-Y1H" secondAttribute="height" multiplier="499:38" id="UUU-b1-Neu"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="bsT-Se-d1H" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Chj-gv-eYT"/>
-                            <constraint firstItem="wsK-pM-Y1H" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="64" id="YQl-dE-EoU"/>
-                            <constraint firstItem="bsT-Se-d1H" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="28" id="bWS-ZV-amX"/>
-                            <constraint firstItem="bsT-Se-d1H" firstAttribute="centerX" secondItem="wsK-pM-Y1H" secondAttribute="centerX" id="eCa-xw-j03"/>
-                            <constraint firstItem="wsK-pM-Y1H" firstAttribute="top" secondItem="bsT-Se-d1H" secondAttribute="bottom" constant="15" id="eSS-Rf-BzX"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="wsK-pM-Y1H" secondAttribute="bottom" constant="108" id="sO1-mu-izH"/>
+                            <constraint firstItem="wsK-pM-Y1H" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="CSM-AS-vLx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bsT-Se-d1H" secondAttribute="trailing" constant="188" id="JwJ-9w-xZs"/>
+                            <constraint firstItem="wsK-pM-Y1H" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="64" id="Xtb-nf-wbs"/>
+                            <constraint firstItem="bsT-Se-d1H" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jod-Re-lRp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wsK-pM-Y1H" secondAttribute="trailing" constant="64" id="mfx-Cx-E3w"/>
+                            <constraint firstItem="bsT-Se-d1H" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="28" id="n6j-Ic-buw"/>
+                            <constraint firstItem="bsT-Se-d1H" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="188" id="q9s-ij-Hb9"/>
+                            <constraint firstItem="wsK-pM-Y1H" firstAttribute="top" secondItem="bsT-Se-d1H" secondAttribute="bottom" constant="15" id="vz0-j1-Mql"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>

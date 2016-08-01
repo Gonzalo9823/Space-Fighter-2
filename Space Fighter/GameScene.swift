@@ -23,11 +23,9 @@ let bestScore = NSUserDefaults.standardUserDefaults()
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
-    
+    //MARK: - Variables
     let defaults = NSUserDefaults.standardUserDefaults()
-    
     var viewController: GameViewController!
-    
     var hero : SKSpriteNode!
     var controllerAfuera : SKSpriteNode!
     var controllerAdentro : SKSpriteNode!
@@ -60,29 +58,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var espanol = false
     
     
-    
+    //MARK: - GAME LIFE CYCLE
     override func didMoveToView(view: SKView) {
+        // This way it knows at what size should show the nodes
         let scaleRatio = self.frame.width / 667
         let scaleRatioiPhone5 = self.frame.width / 568
         let scaleRatioiPhone4 = self.frame.width / 480
         
+        //Gets the language of the device if it's spanish shows everything on spanish
         let pre = NSLocale.preferredLanguages()[0]
-        
-        print(pre)
-        
         if (pre.rangeOfString("es") != nil) {
             espanol = true
         }
         
+        // Get's the saved value for the music
         let playMusic = defaults.boolForKey("Musica")
-        print("--------------------------------------")
-        print(playMusic)
         
-        // SOUNDS
+        // See if it should play the background music
         if playMusic == false {
             let path = NSBundle.mainBundle().pathForResource("backgroundSound.mp3", ofType:nil)!
             let url = NSURL(fileURLWithPath: path)
-            
             do {
                 let sound = try AVAudioPlayer(contentsOfURL: url)
                 gameMusic = sound
@@ -97,7 +92,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             meteorAnimation.append(SKTexture(imageNamed: "rocks-\(i)"))
         }
         
-        //Animacion de meteoro 2
+        //Animacion de meteoro Power Up
         for i in 1...30 {
             powerUpMeteorAnimation.append(SKTexture(imageNamed: "small-rocks-\(i)"))
         }
@@ -123,7 +118,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //Para la Fisica
         physicsWorld.contactDelegate = self
         
-        //Timers
+        //Timer para bajar la barra de disparo
         
         timer2 = NSTimer.scheduledTimerWithTimeInterval(0.3, target:self, selector: #selector(GameScene.bajarFireNumber), userInfo: nil, repeats: true)
         
@@ -171,7 +166,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         hero.physicsBody?.contactTestBitMask = Fisica.object
         hero.physicsBody?.collisionBitMask   = Fisica.none
         
-        //Controllers
+        //Control
         
         controllerAfuera = SKSpriteNode(color: UIColor.brownColor() , size: CGSize(width: 75, height: 75))
         controllerAfuera.position = CGPoint(x: self.frame.width / 2 + 200, y: self.frame.height / 2 - 100)
@@ -193,7 +188,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         fireButtonAdentro.name = "fire"
         addChild(fireButtonAdentro)
         
-        // TIMER
+        // Timer para crear el obstaculo cada vez mas rapido
         
         let crearObstaculo = SKAction.runBlock {
             self.createMeteor()
@@ -281,6 +276,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     var physicsObjectsToRemove = [SKNode]()
+    
     let explosion = SKAction.playSoundFileNamed("explsoion", waitForCompletion: false)
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -333,15 +329,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 physicsObjectsToRemove.append(contact.bodyA.node!)
                 physicsObjectsToRemove.append(disparo)
                 
+                let sound = SKAction.playSoundFileNamed("powerUp", waitForCompletion: false)
+                if playMusic == false {
+                    self.runAction(sound)
+                }
+                
                 let particles = SKEmitterNode(fileNamed: "Smoke")!
                 particles.position = contact.bodyA.node!.position
                 particles.numParticlesToEmit = 20
                 addChild(particles)
                 
-                let sound = SKAction.playSoundFileNamed("powerUp", waitForCompletion: false)
-                if playMusic == false {
-                    self.runAction(sound)
-                }
+                
                 
                 if alive {
                     score += 1
@@ -356,15 +354,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 physicsObjectsToRemove.append(contact.bodyB.node!)
                 physicsObjectsToRemove.append(disparo)
                 
+                let sound = SKAction.playSoundFileNamed("powerUp", waitForCompletion: false)
+                if playMusic == false {
+                    self.runAction(sound)
+                }
+                
                 let particles = SKEmitterNode(fileNamed: "Smoke")!
                 particles.position = contact.bodyB.node!.position
                 particles.numParticlesToEmit = 20
                 addChild(particles)
                 
-                let sound = SKAction.playSoundFileNamed("powerUp", waitForCompletion: false)
-                if playMusic == false {
-                    self.runAction(sound)
-                }
                 
                 if alive {
                     score += 1
@@ -723,8 +722,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func loadAd() {
-        //let vc = viewController.storyboard!.instantiateViewControllerWithIdentifier("Ad")
-        //viewController.presentViewController(vc, animated: true, completion: nil)
         viewController.add()
         
     }

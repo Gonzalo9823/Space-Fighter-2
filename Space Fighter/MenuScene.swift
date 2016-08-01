@@ -26,9 +26,9 @@ class MenuScene: SKScene {
     var start : SKSpriteNode!
     var title : SKSpriteNode!
     var highScoreLabel : SKLabelNode!
-    var musica : SKSpriteNode!
     var ayuda : SKSpriteNode!
     var imagenAyuda : SKSpriteNode!
+    var settings : SKSpriteNode!
     
     let defaults = NSUserDefaults.standardUserDefaults()
     var playMusic = true
@@ -42,8 +42,6 @@ class MenuScene: SKScene {
         
         let pre = NSLocale.preferredLanguages()[0]
         
-        print(pre)
-        
         if (pre.rangeOfString("es") != nil) {
             espanol = true
         }
@@ -56,18 +54,20 @@ class MenuScene: SKScene {
         else {
             start = SKSpriteNode(imageNamed: "start")
         }
+        
+        //Start button
         start.name = "Game Button"
         start.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 - 60)
         start.setScale(0.1 * scaleRatio)
         addChild(start)
         
+        //Title
         title = SKSpriteNode(imageNamed: "title")
         title.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 + 80)
-        
         title.setScale(0.3 * scaleRatio)
-        
         addChild(title)
         
+        //High Score Label
         highScoreLabel = SKLabelNode(fontNamed: "VCR OSD Mono")
         let superScore = bestScore.integerForKey("bestScore")
         
@@ -96,7 +96,7 @@ class MenuScene: SKScene {
             imagenAyuda.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
             imagenAyuda.zPosition = 4
             //imagenAyuda.setScale(0.55 * scaleRatio)
-            imagenAyuda.size = CGSize(width: self.frame.width, height:self.frame.height)
+            imagenAyuda.size = view.frame.size
             imagenAyuda.alpha = 0
             addChild(imagenAyuda)
         }
@@ -107,36 +107,20 @@ class MenuScene: SKScene {
             imagenAyuda.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
             imagenAyuda.zPosition = 4
             //imagenAyuda.setScale(0.55 * scaleRatio)
-            imagenAyuda.size = CGSize(width: self.frame.width, height:self.frame.height)
+            imagenAyuda.size = view.frame.size
             imagenAyuda.alpha = 0
             addChild(imagenAyuda)
         }
         
+        //Settings
         
+        settings = SKSpriteNode(imageNamed: "Settings")
+        settings.name = "Settings"
+        settings.position = CGPoint(x: self.frame.width / 2 - 30 , y: self.frame.height / 2 - 130)
+        settings.setScale(0.1 * scaleRatio)
+        addChild(settings)
         
         //Boton de musica
-        
-        
-        print("------------------------------------------------")
-        print(defaults.boolForKey("Musica"))
-        
-        if defaults.boolForKey("Musica") {
-            musica = SKSpriteNode(imageNamed: "noMusic")
-            musica.name = "Music"
-            musica.position = CGPoint(x: self.frame.width / 2 - 30 , y: self.frame.height / 2 - 130)
-            musica.setScale(0.15 * scaleRatio)
-            addChild(musica)
-            
-        }
-            
-        else {
-            
-            musica = SKSpriteNode(imageNamed: "music")
-            musica.name = "Music"
-            musica.position = CGPoint(x: self.frame.width / 2 - 30 , y: self.frame.height / 2 - 130)
-            musica.setScale(0.15 * scaleRatio)
-            addChild(musica)
-        }
         
     }
     
@@ -162,20 +146,6 @@ class MenuScene: SKScene {
                 nextScene.viewController = viewController
                 
             }
-            else if touchedNode.name == "Music" {
-                
-                if defaults.boolForKey("Musica") {
-                    musica.texture = SKTexture(imageNamed: "music")
-                    defaults.setBool(false, forKey: "Musica")
-                    print("MUSIC")
-                }
-                    
-                else  {
-                    musica.texture = SKTexture(imageNamed: "noMusic")
-                    defaults.setBool(true, forKey: "Musica")
-                    print("NOMUSIC")
-                }
-            }
                 
             else if touchedNode.name == "Ayuda" {
                 let mostrar = SKAction.fadeInWithDuration(0.4)
@@ -184,6 +154,22 @@ class MenuScene: SKScene {
             else if touchedNode.name == "Imagen Ayuda" {
                 let mostrar = SKAction.fadeOutWithDuration(0.4)
                 imagenAyuda.runAction(mostrar)
+            }
+            else if touchedNode.name == "Settings" {
+                
+                settings.alpha = 0.4
+                
+                let transition = SKTransition.fadeWithDuration(0.5)
+                
+                let nextScene = Settings(size: scene!.size)
+                nextScene.scaleMode = .AspectFill
+                
+                UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+                
+                scene?.view?.presentScene(nextScene, transition: transition)
+                nextScene.viewController = viewController
+
+
             }
         }
     }
