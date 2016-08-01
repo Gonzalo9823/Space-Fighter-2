@@ -57,6 +57,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var preferredLanguages : NSLocale!
     var espanol = false
     
+    enum Dificulty: String{
+        case Easy = "Easy"
+        case Medium = "Medium"
+        case Hard = "Hard"
+    }
+    
+    var currentDificulty: Dificulty = .Medium
+    
     
     //MARK: - GAME LIFE CYCLE
     override func didMoveToView(view: SKView) {
@@ -86,6 +94,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 // couldn't load file :(
             }
         }
+        
+        //Gets the dificulty
+        if let estado = defaults.objectForKey("Dificultad") as? String {
+            currentDificulty = Dificulty(rawValue: estado)!
+        }
+        
+        switch currentDificulty {
+        case .Easy:
+            speedOfMeteor = 6
+        case .Medium:
+            speedOfMeteor = 5
+        case .Hard:
+            speedOfMeteor = 4
+        }
+        
         
         //Animacion de meteoro
         for i in 1...30 {
@@ -151,7 +174,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Hero
         hero = SKSpriteNode(imageNamed: "hero")
-        hero.setScale(0.03)
+        
+        if currentDificulty == .Hard {
+            hero.setScale(0.02)
+        } else {
+            hero.setScale(0.03)
+        }
+        
         hero.name = "hero"
         hero.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         hero.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
@@ -210,10 +239,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    
+    
     var tiempoEntreCreacion : NSTimeInterval = 1.3
     
     
     func moverMasRapido() {
+        switch currentDificulty {
+        case .Easy:
+            tiempoEntreCreacion = 1.8
+        case .Medium:
+            tiempoEntreCreacion = 1.3
+        case .Hard:
+            tiempoEntreCreacion = 0.8
+        }
         
         print("First time : \(tiempoEntreCreacion)")
         removeActionForKey("meteors")
