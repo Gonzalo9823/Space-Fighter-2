@@ -28,18 +28,24 @@ class Settings: SKScene {
     var preferredLanguages : NSLocale!
     var espanol = false
     
-    enum Dificulty {
-        case Easy
-        case Medium
-        case Hard
+    enum Dificulty: String{
+        case Easy = "Easy"
+        case Medium = "Medium"
+        case Hard = "Hard"
     }
     
-    var currentDificulty: Dificulty = .Hard
+    var currentDificulty: Dificulty = .Medium
     
     let defaults = NSUserDefaults.standardUserDefaults()
     var playMusic = true
     
     override func didMoveToView(view: SKView) {
+        
+        //defaults.setObject("Easy", forKey: "Dificultad")
+        if let estado = defaults.objectForKey("Dificultad") as? String {
+            currentDificulty = Dificulty(rawValue: estado)!
+        }
+        
         
         
         let scaleRatio = self.frame.width / 667
@@ -217,6 +223,7 @@ class Settings: SKScene {
                     easy.texture = SKTexture(imageNamed: "FacilApretado")
                     currentDificulty = .Easy
                     print("Easy Pressed")
+                    defaults.setObject("Easy", forKey: "Dificultad")
                     
                     medium.texture = SKTexture(imageNamed: "Intermedio")
                     hard.texture = SKTexture(imageNamed: "Dificil")
@@ -226,6 +233,7 @@ class Settings: SKScene {
                     medium.texture = SKTexture(imageNamed: "IntermedioApretado")
                     currentDificulty = .Medium
                     print("Medium Pressed")
+                    defaults.setObject("Medium", forKey: "Dificultad")
                     
                     easy.texture = SKTexture(imageNamed: "Facil")
                     hard.texture = SKTexture(imageNamed: "Dificil")
@@ -235,6 +243,8 @@ class Settings: SKScene {
                     hard.texture = SKTexture(imageNamed: "DificilApretado")
                     currentDificulty = .Hard
                     print("Hard Pressed")
+                    defaults.setObject("Hard", forKey: "Dificultad")
+
                     
                     easy.texture = SKTexture(imageNamed: "Facil")
                     medium.texture = SKTexture(imageNamed: "Intermedio")
@@ -246,7 +256,8 @@ class Settings: SKScene {
                     easy.texture = SKTexture(imageNamed: "EasyPressed")
                     currentDificulty = .Easy
                     print("Easy Pressed")
-                    
+                    defaults.setObject("Easy", forKey: "Dificultad")
+
                     medium.texture = SKTexture(imageNamed: "Medium")
                     hard.texture = SKTexture(imageNamed: "Hard")
                 }
@@ -255,6 +266,7 @@ class Settings: SKScene {
                     medium.texture = SKTexture(imageNamed: "MediumPressed")
                     currentDificulty = .Medium
                     print("Medium Pressed")
+                    defaults.setObject("Medium", forKey: "Dificultad")
                     
                     easy.texture = SKTexture(imageNamed: "Easy")
                     hard.texture = SKTexture(imageNamed: "Hard")
@@ -264,6 +276,7 @@ class Settings: SKScene {
                     hard.texture = SKTexture(imageNamed: "HardPressed")
                     currentDificulty = .Hard
                     print("Hard Pressed")
+                    defaults.setObject("Hard", forKey: "Dificultad")
                     
                     easy.texture = SKTexture(imageNamed: "Easy")
                     medium.texture = SKTexture(imageNamed: "Medium")
