@@ -2,7 +2,17 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="VCR_OSD_MONO_.otf">
+            <string>VCROSDMono</string>
+            <string>VCROSDMono</string>
+            <string>VCROSDMono</string>
+            <string>VCROSDMono</string>
+            <string>VCROSDMono</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -67,6 +77,118 @@
             </objects>
             <point key="canvasLocation" x="1059.5" y="186.5"/>
         </scene>
+        <!--Upload View Controller-->
+        <scene sceneID="Qlf-AC-iA2">
+            <objects>
+                <viewController storyboardIdentifier="upload" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z3C-nQ-AH5" customClass="UploadViewController" customModule="Space_Fighter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Lx-dt-pD2"/>
+                        <viewControllerLayoutGuide type="bottom" id="UlL-Rq-Q5b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xUd-Ma-Kr4">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6bT-fK-Vpq">
+                                <rect key="frame" x="20" y="99" width="333" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QaS-bO-aAN">
+                                <rect key="frame" x="387" y="99" width="260" height="256"/>
+                                <color key="backgroundColor" red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="lLk-wt-Anc"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload HighScore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbC-Vc-PKx">
+                                <rect key="frame" x="130" y="18" width="406" height="49"/>
+                                <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="38"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsr-PK-JOk">
+                                <rect key="frame" x="20" y="70" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HnL-d7-fJ5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWS-vy-Roa">
+                                <rect key="frame" x="387" y="75" width="80" height="25"/>
+                                <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoY-3K-FVW">
+                                <rect key="frame" x="20" y="137" width="110" height="21"/>
+                                <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6tD-JG-49h">
+                                <rect key="frame" x="20" y="20" width="35" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="xY0-UV-7P3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="VCROSDMono" family="VCR OSD Mono" pointSize="34"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="1" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="Z3C-nQ-AH5" eventType="touchUpInside" id="dQg-xP-q6h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5S-3x-vuR">
+                                <rect key="frame" x="71" y="197" width="231" height="59"/>
+                                <state key="normal" title="Button" image="Upload"/>
+                                <connections>
+                                    <action selector="uploadButtonAction:" destination="Z3C-nQ-AH5" eventType="touchUpInside" id="8NJ-OX-2jK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="rWS-vy-Roa" firstAttribute="top" secondItem="wbC-Vc-PKx" secondAttribute="bottom" constant="8" symbolic="YES" id="1bU-T9-OmI"/>
+                            <constraint firstItem="wbC-Vc-PKx" firstAttribute="leading" secondItem="6tD-JG-49h" secondAttribute="trailing" constant="75" id="5OC-EU-eCs"/>
+                            <constraint firstItem="LoY-3K-FVW" firstAttribute="top" secondItem="6bT-fK-Vpq" secondAttribute="bottom" constant="8" symbolic="YES" id="6tm-B1-4WL"/>
+                            <constraint firstItem="6tD-JG-49h" firstAttribute="leading" secondItem="xUd-Ma-Kr4" secondAttribute="leadingMargin" id="8cm-Ih-E7w"/>
+                            <constraint firstItem="6tD-JG-49h" firstAttribute="leading" secondItem="fsr-PK-JOk" secondAttribute="leading" id="CXQ-7W-DCC"/>
+                            <constraint firstItem="6bT-fK-Vpq" firstAttribute="top" secondItem="QaS-bO-aAN" secondAttribute="top" id="DVj-fe-3LB"/>
+                            <constraint firstItem="6tD-JG-49h" firstAttribute="top" secondItem="9Lx-dt-pD2" secondAttribute="bottom" id="M46-6Y-6Tl"/>
+                            <constraint firstItem="wbC-Vc-PKx" firstAttribute="top" secondItem="xUd-Ma-Kr4" secondAttribute="topMargin" constant="18" id="Oy1-XP-gxE"/>
+                            <constraint firstItem="UlL-Rq-Q5b" firstAttribute="top" secondItem="LoY-3K-FVW" secondAttribute="bottom" constant="217" id="PLK-cY-Dlt"/>
+                            <constraint firstItem="wbC-Vc-PKx" firstAttribute="centerX" secondItem="xUd-Ma-Kr4" secondAttribute="centerX" id="Rh0-Lt-DPQ"/>
+                            <constraint firstItem="rWS-vy-Roa" firstAttribute="leading" secondItem="QaS-bO-aAN" secondAttribute="leading" id="Wu9-WX-FLn"/>
+                            <constraint firstItem="fsr-PK-JOk" firstAttribute="top" secondItem="6tD-JG-49h" secondAttribute="bottom" constant="11" id="aEW-57-pew"/>
+                            <constraint firstItem="UlL-Rq-Q5b" firstAttribute="top" secondItem="rWS-vy-Roa" secondAttribute="bottom" constant="275" id="aWC-F1-zXq"/>
+                            <constraint firstItem="LoY-3K-FVW" firstAttribute="top" secondItem="fsr-PK-JOk" secondAttribute="bottom" constant="37" id="dQ1-yN-mUA"/>
+                            <constraint firstAttribute="bottom" secondItem="QaS-bO-aAN" secondAttribute="bottom" constant="20" symbolic="YES" id="etx-Ke-gL1"/>
+                            <constraint firstItem="QaS-bO-aAN" firstAttribute="leading" secondItem="6bT-fK-Vpq" secondAttribute="trailing" constant="34" id="ilM-K1-rrq"/>
+                            <constraint firstItem="fsr-PK-JOk" firstAttribute="baseline" secondItem="rWS-vy-Roa" secondAttribute="baseline" id="kXv-pc-Muu"/>
+                            <constraint firstItem="QaS-bO-aAN" firstAttribute="trailing" secondItem="xUd-Ma-Kr4" secondAttribute="trailingMargin" id="lJV-uZ-Z6K"/>
+                            <constraint firstItem="fsr-PK-JOk" firstAttribute="leading" secondItem="6bT-fK-Vpq" secondAttribute="leading" id="owc-1x-Rvw"/>
+                            <constraint firstItem="6bT-fK-Vpq" firstAttribute="top" secondItem="wbC-Vc-PKx" secondAttribute="bottom" constant="32" id="uQx-Ek-mTJ"/>
+                            <constraint firstItem="6bT-fK-Vpq" firstAttribute="leading" secondItem="LoY-3K-FVW" secondAttribute="leading" id="vFh-Oy-Ihm"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="nombre" destination="fsr-PK-JOk" id="Q6m-fV-3Hn"/>
+                        <outlet property="pais" destination="rWS-vy-Roa" id="JKb-1G-uKA"/>
+                        <outlet property="puntaje" destination="LoY-3K-FVW" id="Kjx-UZ-s22"/>
+                        <outlet property="selectCountry" destination="QaS-bO-aAN" id="ets-lk-fvz"/>
+                        <outlet property="titulo" destination="wbC-Vc-PKx" id="myx-pk-lJY"/>
+                        <outlet property="uploadButton" destination="V5S-3x-vuR" id="hGs-rd-Eeu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UOc-AD-Gmf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1059.5" y="618.5"/>
+        </scene>
         <!--Page View Controller-->
         <scene sceneID="9bG-jo-Kk6">
             <objects>
@@ -79,4 +201,7 @@
             <point key="canvasLocation" x="1753.5" y="186.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Upload" width="2304" height="608"/>
+    </resources>
 </document>

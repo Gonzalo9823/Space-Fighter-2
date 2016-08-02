@@ -750,6 +750,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             if score > actualBestScore {
                 defaults.setInteger(score, forKey: "bestScoreEasy")
+                gameOver.fontColor = UIColor.redColor()
+                if espanol {
+                    gameOver.text = "¡Nuevo Record!"
+                } else {
+                    gameOver.text = "New Record!"
+                }
             }
             
         case .Medium:
@@ -757,12 +763,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             if score > actualBestScore {
                 defaults.setInteger(score, forKey: "bestScore")
+                gameOver.fontColor = UIColor.redColor()
+                if espanol {
+                    gameOver.text = "¡Nuevo Record!"
+                } else {
+                    gameOver.text = "New Record!"
+                }
             }
         case .Hard:
             let actualBestScore = defaults.integerForKey("bestScoreHard")
             
             if score > actualBestScore {
                 defaults.setInteger(score, forKey: "bestScoreHard")
+                gameOver.fontColor = UIColor.redColor()
+                if espanol {
+                    gameOver.text = "¡Nuevo Record!"
+                } else {
+                    gameOver.text = "New Record!"
+                }
             }
         }
     }

@@ -13,6 +13,7 @@
 		EA4F38B41D429EC400E42D87 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA4F38B31D429EC400E42D87 /* GoogleService-Info.plist */; };
 		EAA873B21D3445ED00CCB8D5 /* powerUp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EAA873B11D3445ED00CCB8D5 /* powerUp.mp3 */; };
 		EABA0DE01D5138C000037EB3 /* MundialScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABA0DDF1D5138C000037EB3 /* MundialScoreTableViewController.swift */; };
+		EABA0DE21D5145CD00037EB3 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABA0DE11D5145CD00037EB3 /* UploadViewController.swift */; };
 		EAE37D4D1D342E080062981B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE37D4B1D342E080062981B /* Main.storyboard */; };
 		EAE37D5A1D342E230062981B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE37D591D342E230062981B /* AppDelegate.swift */; };
 		EAE37D5E1D342E3E0062981B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE37D5B1D342E3E0062981B /* GameScene.swift */; };
@@ -41,6 +42,7 @@
 		EA4F38B31D429EC400E42D87 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EAA873B11D3445ED00CCB8D5 /* powerUp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = powerUp.mp3; sourceTree = "<group>"; };
 		EABA0DDF1D5138C000037EB3 /* MundialScoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MundialScoreTableViewController.swift; sourceTree = "<group>"; };
+		EABA0DE11D5145CD00037EB3 /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		EAE37D401D342E080062981B /* Space Fighter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Fighter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE37D4C1D342E080062981B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAE37D591D342E230062981B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				EA2DBC891D4FDCC90066457A /* Settings.swift */,
 				EAE37D5B1D342E3E0062981B /* GameScene.swift */,
 				EABA0DDF1D5138C000037EB3 /* MundialScoreTableViewController.swift */,
+				EABA0DE11D5145CD00037EB3 /* UploadViewController.swift */,
 				EAE37D671D342E4F0062981B /* Assets.xcassets */,
 				EAE37D751D342F070062981B /* LaunchScreen.storyboard */,
 				EAE37D4B1D342E080062981B /* Main.storyboard */,
@@ -297,6 +300,7 @@
 				EAE37D5F1D342E3E0062981B /* MenuScene.swift in Sources */,
 				EAE37D741D342E580062981B /* CGVector+Extensions.swift in Sources */,
 				EAE37D5E1D342E3E0062981B /* GameScene.swift in Sources */,
+				EABA0DE21D5145CD00037EB3 /* UploadViewController.swift in Sources */,
 				EA2DBC8A1D4FDCC90066457A /* Settings.swift in Sources */,
 				EABA0DE01D5138C000037EB3 /* MundialScoreTableViewController.swift in Sources */,
 				EAE37D5A1D342E230062981B /* AppDelegate.swift in Sources */,

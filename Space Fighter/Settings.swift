@@ -39,22 +39,34 @@ class Settings: SKScene {
     let defaults = NSUserDefaults.standardUserDefaults()
     var playMusic = true
     
+    var uploadBestScore: SKSpriteNode!
+    
     override func didMoveToView(view: SKView) {
         
-        //defaults.setObject("Easy", forKey: "Dificultad")
-        if let estado = defaults.objectForKey("Dificultad") as? String {
-            currentDificulty = Dificulty(rawValue: estado)!
-        }
-        
-        
-        
-        let scaleRatio = self.frame.width / 667
         
         let pre = NSLocale.preferredLanguages()[0]
         
         if (pre.rangeOfString("es") != nil) {
             espanol = true
         }
+        
+        if let estado = defaults.objectForKey("Dificultad") as? String {
+            currentDificulty = Dificulty(rawValue: estado)!
+        }
+        
+        let scaleRatio = self.frame.width / 667
+        
+        //Subir mejor puntaje
+        if espanol {
+            uploadBestScore = SKSpriteNode(imageNamed: "subirMejorPuntaje")
+        } else {
+            uploadBestScore = SKSpriteNode(imageNamed: "uploadHighScore")
+        }
+        uploadBestScore.name = "Subir"
+        uploadBestScore.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 - 60)
+        uploadBestScore.setScale(0.1 * scaleRatio)
+        addChild(uploadBestScore)
+        
         
         if espanol {
             backButton = SKSpriteNode(imageNamed: "Atras")
@@ -170,7 +182,7 @@ class Settings: SKScene {
         if defaults.boolForKey("Musica") {
             musica = SKSpriteNode(imageNamed: "noMusic")
             musica.name = "Music"
-            musica.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 - 100)
+            musica.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 - 130)
             musica.setScale(0.2 * scaleRatio)
             addChild(musica)
             
@@ -180,7 +192,7 @@ class Settings: SKScene {
             
             musica = SKSpriteNode(imageNamed: "music")
             musica.name = "Music"
-            musica.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 - 100)
+            musica.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 - 130)
             musica.setScale(0.2 * scaleRatio)
             addChild(musica)
             
@@ -218,6 +230,11 @@ class Settings: SKScene {
                 }
             }
             
+            else if touchedNode.name == "Subir" {
+                let vc = viewController.storyboard?.instantiateViewControllerWithIdentifier("upload")
+                viewController.presentViewController(vc!, animated: true, completion: nil)
+            }
+            
             if espanol {
                 if touchedNode.name == "Easy" {
                     easy.texture = SKTexture(imageNamed: "FacilApretado")
@@ -244,20 +261,20 @@ class Settings: SKScene {
                     currentDificulty = .Hard
                     print("Hard Pressed")
                     defaults.setObject("Hard", forKey: "Dificultad")
-
+                    
                     
                     easy.texture = SKTexture(imageNamed: "Facil")
                     medium.texture = SKTexture(imageNamed: "Intermedio")
                 }
             }
-            
+                
             else if espanol == false {
                 if touchedNode.name == "Easy" {
                     easy.texture = SKTexture(imageNamed: "EasyPressed")
                     currentDificulty = .Easy
                     print("Easy Pressed")
                     defaults.setObject("Easy", forKey: "Dificultad")
-
+                    
                     medium.texture = SKTexture(imageNamed: "Medium")
                     hard.texture = SKTexture(imageNamed: "Hard")
                 }
