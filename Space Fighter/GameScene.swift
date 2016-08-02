@@ -19,8 +19,6 @@ struct Fisica {
     
 }
 
-let bestScore = NSUserDefaults.standardUserDefaults()
-
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK: - Variables
@@ -83,16 +81,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let playMusic = defaults.boolForKey("Musica")
         
         // See if it should play the background music
-        if playMusic == false {
+        
+        func playBackGroundMusic() {
+            
             let path = NSBundle.mainBundle().pathForResource("backgroundSound.mp3", ofType:nil)!
             let url = NSURL(fileURLWithPath: path)
             do {
                 let sound = try AVAudioPlayer(contentsOfURL: url)
                 gameMusic = sound
                 sound.play()
+                
             } catch {
                 // couldn't load file :(
             }
+        }
+        
+        
+        if playMusic == false {
+           playBackGroundMusic()
         }
         
         //Gets the dificulty
@@ -106,7 +112,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         case .Medium:
             speedOfMeteor = 5
         case .Hard:
-            speedOfMeteor = 4
+            speedOfMeteor = 3.5
         }
         
         
@@ -146,7 +152,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         timer2 = NSTimer.scheduledTimerWithTimeInterval(0.3, target:self, selector: #selector(GameScene.bajarFireNumber), userInfo: nil, repeats: true)
         
         //Score
-        
+
         scoreLabel = SKLabelNode(fontNamed: "VCR OSD Mono")
         if espanol {
             scoreLabel.text = "Puntaje \(score)"
@@ -175,11 +181,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //Hero
         hero = SKSpriteNode(imageNamed: "hero")
         
-        if currentDificulty == .Hard {
-            hero.setScale(0.02)
-        } else {
-            hero.setScale(0.03)
-        }
+        hero.setScale(0.03)
         
         hero.name = "hero"
         hero.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -251,7 +253,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         case .Medium:
             tiempoEntreCreacion = 1.3
         case .Hard:
-            tiempoEntreCreacion = 0.8
+            tiempoEntreCreacion = 0.6
         }
         
         print("First time : \(tiempoEntreCreacion)")
@@ -531,11 +533,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         hero.zRotation = getAngle() - halfPie
         
-        let acutualBestScore = bestScore.integerForKey("bestScore")
-        
-        if score > acutualBestScore {
-            bestScore.setInteger(score, forKey: "bestScore")
-        }
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -668,16 +665,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         disparo.zRotation = getAngle() + halfPie
         
         
-        //        let moverX = SKAction.moveToX(getX(getAngle()), duration: 3)
-        //        let moverY = SKAction.moveToY(getY(getAngle()), duration: 3)
-        
-        
-        
-        //let mover = SKAction.moveTo(CGPoint(x: x, y: y), duration: 3)
-        // SKAction.moveBy(<#T##delta: CGVector##CGVector#>, duration: <#T##NSTimeInterval#>)
-        /// CGVector(dx: <#T##CGFloat#>, dy: <#T##CGFloat#>)
-        
-        
         disparo.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: 3, height: 9))
         disparo.physicsBody?.dynamic = true
         disparo.physicsBody?.affectedByGravity = false
@@ -685,10 +672,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         disparo.physicsBody?.categoryBitMask    = Fisica.bullets
         disparo.physicsBody?.contactTestBitMask = Fisica.object
         disparo.physicsBody?.collisionBitMask   = Fisica.none
-        
-        //        disparo.runAction(moverX)
-        //        disparo.runAction(moverY)
-        //disparo.runAction(mover)
+
         
         let angle = CGVector(angle: getAngle())
         let vector = angle * 800
@@ -717,9 +701,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func lost() {
         
-        let playMusic = defaults.boolForKey("Musica")
-        
         removeAllActions()
+        stopBackGroundMusic()
+        
         alive = false
         
         gameOver = SKLabelNode(fontNamed: "VCR OSD Mono")
@@ -752,17 +736,53 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         menuButton.setScale(0.08)
         addChild(menuButton)
         
+        updateBestScore(score)
         
-        if playMusic == false {
-            gameMusic.stop()
-        }
         loadAd()
         
+    }
+    
+    func updateBestScore(score: Int) {
+        
+        switch currentDificulty {
+        case .Easy:
+            let actualBestScore = defaults.integerForKey("bestScoreEasy")
+            
+            if score > actualBestScore {
+                defaults.setInteger(score, forKey: "bestScoreEasy")
+            }
+            
+        case .Medium:
+            let actualBestScore = defaults.integerForKey("bestScore")
+            
+            if score > actualBestScore {
+                defaults.setInteger(score, forKey: "bestScore")
+            }
+        case .Hard:
+            let actualBestScore = defaults.integerForKey("bestScoreHard")
+            
+            if score > actualBestScore {
+                defaults.setInteger(score, forKey: "bestScoreHard")
+            }
+        }
     }
     
     func loadAd() {
         viewController.add()
         
+    }
+    
+    func stopBackGroundMusic() {
+        let path = NSBundle.mainBundle().pathForResource("backgroundSound.mp3", ofType:nil)!
+        let url = NSURL(fileURLWithPath: path)
+        do {
+            let sound = try AVAudioPlayer(contentsOfURL: url)
+            gameMusic = sound
+            sound.stop()
+            
+        } catch {
+            // couldn't load file :(
+        }
     }
     
     func bajarFireNumber() {

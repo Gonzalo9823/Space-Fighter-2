@@ -8,7 +8,7 @@
 
 import Foundation
 import SpriteKit
-
+import UIKit
 
 
 class MenuScene: SKScene {
@@ -29,6 +29,7 @@ class MenuScene: SKScene {
     var ayuda : SKSpriteNode!
     var imagenAyuda : SKSpriteNode!
     var settings : SKSpriteNode!
+    var mundial : SKSpriteNode!
     
     let defaults = NSUserDefaults.standardUserDefaults()
     var playMusic = true
@@ -37,8 +38,19 @@ class MenuScene: SKScene {
     
     var espanol = false
     
+    enum Dificulty: String{
+        case Easy = "Easy"
+        case Medium = "Medium"
+        case Hard = "Hard"
+    }
+    
+    var currentDificulty: Dificulty = .Medium
+    
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
+        
+        if let estado = defaults.objectForKey("Dificultad") as? String {
+            currentDificulty = Dificulty(rawValue: estado)!
+        }
         
         let pre = NSLocale.preferredLanguages()[0]
         
@@ -69,16 +81,37 @@ class MenuScene: SKScene {
         
         //High Score Label
         highScoreLabel = SKLabelNode(fontNamed: "VCR OSD Mono")
-        let superScore = bestScore.integerForKey("bestScore")
+        
+        let superScoreEasy = defaults.integerForKey("bestScoreEasy")
+        let superScore = defaults.integerForKey("bestScore")
+        let superScoreHard = defaults.integerForKey("bestScoreHard")
         
         if espanol {
-            highScoreLabel.text = "Mejor Puntaje \(superScore)"
+            switch currentDificulty  {
+            case .Easy:
+                highScoreLabel.text = "Mejor puntaje en facíl \(superScoreEasy)"
+            case .Medium:
+                highScoreLabel.text = "Mejor puntaje en intermedio \(superScore)"
+            case .Hard:
+                highScoreLabel.text = "Mejor puntaje en difícil \(superScoreHard)"
+            }
         }
         else {
-            highScoreLabel.text = "High Score \(superScore)"
+            switch currentDificulty {
+            case .Easy:
+                highScoreLabel.text = "High score on easy \(superScoreEasy)"
+            case .Medium:
+                highScoreLabel.text = "High score on medium \(superScore)"
+            case .Hard:
+                highScoreLabel.text = "High score on hard \(superScoreHard)"
+            }
         }
         highScoreLabel.horizontalAlignmentMode = .Center
-        highScoreLabel.fontSize = 40
+        if espanol {
+            highScoreLabel.fontSize = 35
+        } else {
+            highScoreLabel.fontSize = 40
+        }
         highScoreLabel.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 - 5)
         addChild(highScoreLabel)
         
@@ -86,8 +119,8 @@ class MenuScene: SKScene {
         
         ayuda = SKSpriteNode(imageNamed: "ayuda")
         ayuda.name = "Ayuda"
-        ayuda.position = CGPoint(x: self.frame.width / 2 + 30 , y: self.frame.height / 2 - 130)
-        ayuda.setScale(0.15 * scaleRatio)
+        ayuda.position = CGPoint(x: self.frame.width / 2 + 60 , y: self.frame.height / 2 - 130)
+        ayuda.setScale(0.2 * scaleRatio)
         addChild(ayuda)
         
         if espanol {
@@ -116,11 +149,17 @@ class MenuScene: SKScene {
         
         settings = SKSpriteNode(imageNamed: "Settings")
         settings.name = "Settings"
-        settings.position = CGPoint(x: self.frame.width / 2 - 30 , y: self.frame.height / 2 - 130)
+        settings.position = CGPoint(x: self.frame.width / 2 - 60 , y: self.frame.height / 2 - 130)
         settings.setScale(0.1 * scaleRatio)
         addChild(settings)
         
-        //Boton de musica
+        //Boton de HighScoreMundial
+        mundial = SKSpriteNode(imageNamed: "World")
+        mundial.name = "Mundial"
+        mundial.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2 - 130)
+        mundial.setScale(0.2 * scaleRatio)
+        addChild(mundial)
+        
         
     }
     
@@ -168,8 +207,13 @@ class MenuScene: SKScene {
                 
                 scene?.view?.presentScene(nextScene, transition: transition)
                 nextScene.viewController = viewController
-
-
+                
+                
+            }
+            else if touchedNode.name == "Mundial" {
+                
+                let vc = viewController.storyboard?.instantiateViewControllerWithIdentifier("mundialScore")
+                viewController.presentViewController(vc!, animated: true, completion: nil)
             }
         }
     }
