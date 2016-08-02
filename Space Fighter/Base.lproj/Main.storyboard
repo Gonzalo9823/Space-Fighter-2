@@ -148,6 +148,9 @@
                                     <action selector="uploadButtonAction:" destination="Z3C-nQ-AH5" eventType="touchUpInside" id="8NJ-OX-2jK"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ldB-iO-p4a">
+                                <rect key="frame" x="315" y="144" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -177,7 +180,9 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="loading" destination="ldB-iO-p4a" id="wVA-6H-yYJ"/>
                         <outlet property="nombre" destination="fsr-PK-JOk" id="Q6m-fV-3Hn"/>
+                        <outlet property="nombreDeJugador" destination="6bT-fK-Vpq" id="Nml-dd-cHk"/>
                         <outlet property="pais" destination="rWS-vy-Roa" id="JKb-1G-uKA"/>
                         <outlet property="puntaje" destination="LoY-3K-FVW" id="Kjx-UZ-s22"/>
                         <outlet property="selectCountry" destination="QaS-bO-aAN" id="ets-lk-fvz"/>

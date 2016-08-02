@@ -13,30 +13,33 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0EEF087DB4828CA2DD8E2EEA1592A732 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		0B2645E4295A572F91A160D2CE6C6BFD /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		2C5924AA6233CB8219E46AF8B62E836D /* FirebaseMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseMessaging.framework; path = Frameworks/FirebaseMessaging.framework; sourceTree = "<group>"; };
 		322A683B4658ADF661342BE3AAD94CA1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F6B600D17C93B5314543140F01AC2E8 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Headers/Firebase.h; sourceTree = "<group>"; };
-		5019DDF0FB9E60BE3F5D2AB6CBEE9018 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		5A9D74433EDF16BC00CFD94AD6DD45AD /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
 		6173C8A6BD23BD65374C705CEC6541DB /* Pods_Space_Fighter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Space_Fighter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		641CDD9A4E117DDB479616CC2A4FD5EE /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
-		7250FB0BEC1E8FDCDCA33B7FC0258436 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Headers/Public/FIRInstanceID.h; sourceTree = "<group>"; };
+		674E1F74A6EFB9D04F52E6F2723B0E84 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Headers/Public/FIRInstanceID.h; sourceTree = "<group>"; };
+		6AE7B7B9F59557EC10BA48D524700529 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		6BB51FF5A5B673D925EEA7E3E6C9546F /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
 		81F077782C1FFD300F6D3E70CB849F6A /* Pods-Space Fighter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Space Fighter-dummy.m"; sourceTree = "<group>"; };
+		85A84C332B54E100C15FEEC2EB859086 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
 		895E8221633DB2E9DF13B3336257AF2C /* Pods-Space Fighter-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Space Fighter-frameworks.sh"; sourceTree = "<group>"; };
-		8D07C7E5A4FE0B4335CC1D51FED3F388 /* FirebaseMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseMessaging.framework; path = Frameworks/FirebaseMessaging.framework; sourceTree = "<group>"; };
-		8DD2522AEC4D505E0BEB479E4743E4C2 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9C801EACF390ADA59E5AF718B5294527 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		99B68CF1ADAB06A12C3B1709545851D7 /* GoogleIPhoneUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleIPhoneUtilities.framework; path = Frameworks/GoogleIPhoneUtilities.framework; sourceTree = "<group>"; };
 		A402DB47DCE8E691F53D35EFAF8B319E /* Pods-Space Fighter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Space Fighter-umbrella.h"; sourceTree = "<group>"; };
 		A42727CD71F7348DE3CBD8B19DFFF083 /* Pods-Space Fighter-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Space Fighter-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A5B9B57EDE0166592B8CB7CE82B4E883 /* Pods-Space Fighter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Space Fighter.release.xcconfig"; sourceTree = "<group>"; };
+		BE2AB7DAC6B9D4A5726DA3FEAC6FEC7E /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Headers/Firebase.h; sourceTree = "<group>"; };
 		C00C3701E635F840D8E123E88D33A922 /* Pods-Space Fighter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Space Fighter.debug.xcconfig"; sourceTree = "<group>"; };
 		C35ECDE0C97CF03A576A1B00FD78A8C3 /* Pods-Space Fighter-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Space Fighter-resources.sh"; sourceTree = "<group>"; };
-		C901F2F04EA3D30015B9258794D2B972 /* FIRMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessaging.h; path = Headers/Public/FIRMessaging.h; sourceTree = "<group>"; };
+		C98579F76211BC72A234F0B207EB8C0A /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D23DE3005E594734FABB3ED399783F7C /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		DF22CE38FF1C226871EEF2DF8A92A6F4 /* FIRMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessaging.h; path = Headers/Public/FIRMessaging.h; sourceTree = "<group>"; };
+		E2D927C03446F6969902486C483059F7 /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
+		E402A5D08CF7E59BCD0AE03F102F700A /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
 		E4D8F261CC65D6874B28FB3CAEFF4369 /* Pods-Space Fighter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Space Fighter.modulemap"; sourceTree = "<group>"; };
-		F11FD98E9F3E0B7007596D435FE04FFA /* GoogleIPhoneUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleIPhoneUtilities.framework; path = Frameworks/GoogleIPhoneUtilities.framework; sourceTree = "<group>"; };
 		F162B758B59D7049DEC3E93394D64DA9 /* Pods-Space Fighter-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Space Fighter-acknowledgements.plist"; sourceTree = "<group>"; };
-		FF1906CB1A229446B2333E2E41FC1141 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,60 +54,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		031AB6BB96DFB139441904093D5067FC /* GoogleInterchangeUtilities */ = {
+		033D6A712DB169E8CAAB49EB45DB9E6C /* GoogleIPhoneUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				F8FE25F9B685C6CBE01ACBF2387D22DE /* Frameworks */,
+				7F4AE3AF5A83D2413BDC3F1DB99B1C50 /* Frameworks */,
 			);
-			path = GoogleInterchangeUtilities;
+			path = GoogleIPhoneUtilities;
 			sourceTree = "<group>";
 		};
-		0E6D8DF342A61AE078004F341F1289EF /* GoogleSymbolUtilities */ = {
+		0D7DC6D57E358D5CA48854AA98D945CC /* FirebaseAuth */ = {
 			isa = PBXGroup;
 			children = (
-				972D318A56DA562255BBE037AF3BBE6E /* Frameworks */,
+				2B0BDA1D246E9DF0359ADA8BD78CB67A /* Frameworks */,
 			);
-			path = GoogleSymbolUtilities;
+			path = FirebaseAuth;
 			sourceTree = "<group>";
 		};
-		175E4A61A6852315FF015623251C0664 /* Frameworks */ = {
+		0F395E83C74D76A59263236CB16EF792 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F11FD98E9F3E0B7007596D435FE04FFA /* GoogleIPhoneUtilities.framework */,
+				C98579F76211BC72A234F0B207EB8C0A /* FirebaseDatabase.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1CEDE4EDDF0ACF13A8595A37BC90B505 /* Analytics */ = {
+		12A07F8675C9E2CD15FD0813EF0B9FB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4F6B600D17C93B5314543140F01AC2E8 /* Firebase.h */,
-			);
-			name = Analytics;
-			sourceTree = "<group>";
-		};
-		2462F81460B783B7F9C443C5A9B7A195 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8D07C7E5A4FE0B4335CC1D51FED3F388 /* FirebaseMessaging.framework */,
+				6AE7B7B9F59557EC10BA48D524700529 /* FirebaseAnalytics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		29F5AF02325E2AC979ACD3461D34E3F3 /* Frameworks */ = {
+		14F9BD1B212836E8BAE19042C907C919 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0EEF087DB4828CA2DD8E2EEA1592A732 /* FirebaseAnalytics.framework */,
+				D23DE3005E594734FABB3ED399783F7C /* GoogleNetworkingUtilities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2A98FD3A8D2F3A07D61E60490960A459 /* FirebaseAnalytics */ = {
+		2237FD356EF2531DC3346DC9FC41B1D4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				29F5AF02325E2AC979ACD3461D34E3F3 /* Frameworks */,
+				8087E794C343C2DBB29A855587ACB3A3 /* Firebase */,
+				BAB304490D0553171C9A33BC3751FC3B /* FirebaseAnalytics */,
+				0D7DC6D57E358D5CA48854AA98D945CC /* FirebaseAuth */,
+				FF031650AFBA082DD13ABC9540C5C392 /* FirebaseDatabase */,
+				E7E95B9AF8355CC4F96930683795B0D3 /* FirebaseInstanceID */,
+				8DF1A305678847A08462922F1C992BFF /* FirebaseMessaging */,
+				D1418BFE4123EB6A1C3F4C039ACAE06D /* Google-Mobile-Ads-SDK */,
+				31D6EFF547C3CACB6F4B221BCD7F817B /* GoogleInterchangeUtilities */,
+				033D6A712DB169E8CAAB49EB45DB9E6C /* GoogleIPhoneUtilities */,
+				CC38B3D8A2DD17B63BE8697773B8BBD6 /* GoogleNetworkingUtilities */,
+				CDCC3A9035ACF122E30B1D00E9E73888 /* GoogleSymbolUtilities */,
+				EF4BDDA7AA46AFAFFBE4BAD03F18C566 /* GoogleUtilities */,
 			);
-			path = FirebaseAnalytics;
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2B0BDA1D246E9DF0359ADA8BD78CB67A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2D927C03446F6969902486C483059F7 /* FirebaseAuth.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		2F7A5CC23BE696D56FBA17BB95808959 /* Pods-Space Fighter */ = {
@@ -125,28 +139,20 @@
 			path = "Target Support Files/Pods-Space Fighter";
 			sourceTree = "<group>";
 		};
-		34A2D84C171B9F5CE74944417278698D /* Pods */ = {
+		31D6EFF547C3CACB6F4B221BCD7F817B /* GoogleInterchangeUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				A87AC2D7A2BFB50E118F2D375C0A0198 /* Firebase */,
-				2A98FD3A8D2F3A07D61E60490960A459 /* FirebaseAnalytics */,
-				5DEACC08A842682DE2E1BA821183C3D8 /* FirebaseInstanceID */,
-				5C8230CB8A53CD27881C88037A40152E /* FirebaseMessaging */,
-				3DB27C8CC6F015421EDEEDA581D13C96 /* Google-Mobile-Ads-SDK */,
-				031AB6BB96DFB139441904093D5067FC /* GoogleInterchangeUtilities */,
-				8BE1502B417C9F4A988A67F4A72C8FB3 /* GoogleIPhoneUtilities */,
-				0E6D8DF342A61AE078004F341F1289EF /* GoogleSymbolUtilities */,
-				4BD422AF5103BCCCF7BA990C080017C0 /* GoogleUtilities */,
+				65E397A40E8E2230364C2572821567C6 /* Frameworks */,
 			);
-			name = Pods;
+			path = GoogleInterchangeUtilities;
 			sourceTree = "<group>";
 		};
-		3DB27C8CC6F015421EDEEDA581D13C96 /* Google-Mobile-Ads-SDK */ = {
+		3AFC12D07649F9F6A13E4B95F1D0AE65 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E2EE815F952799FA3CADE0EAC42846A8 /* Frameworks */,
+				E402A5D08CF7E59BCD0AE03F102F700A /* FirebaseInstanceID.framework */,
 			);
-			path = "Google-Mobile-Ads-SDK";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
@@ -157,30 +163,36 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		4BD422AF5103BCCCF7BA990C080017C0 /* GoogleUtilities */ = {
+		3EEEE8EBA8996E4D678F97A56935CE8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				93D860752B2781024CD9DF40174F52AC /* Frameworks */,
+				6BB51FF5A5B673D925EEA7E3E6C9546F /* GoogleUtilities.framework */,
 			);
-			path = GoogleUtilities;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5C8230CB8A53CD27881C88037A40152E /* FirebaseMessaging */ = {
+		4908E0BF6A77E66554459B32B02D3447 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C901F2F04EA3D30015B9258794D2B972 /* FIRMessaging.h */,
-				2462F81460B783B7F9C443C5A9B7A195 /* Frameworks */,
+				2C5924AA6233CB8219E46AF8B62E836D /* FirebaseMessaging.framework */,
 			);
-			path = FirebaseMessaging;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5DEACC08A842682DE2E1BA821183C3D8 /* FirebaseInstanceID */ = {
+		57F04ED8431648B3B5126C48C10308B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7250FB0BEC1E8FDCDCA33B7FC0258436 /* FIRInstanceID.h */,
-				996BD9460685239414862BEA0DE99B90 /* Frameworks */,
+				5A9D74433EDF16BC00CFD94AD6DD45AD /* GoogleSymbolUtilities.framework */,
 			);
-			path = FirebaseInstanceID;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65E397A40E8E2230364C2572821567C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B2645E4295A572F91A160D2CE6C6BFD /* GoogleInterchangeUtilities.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -188,50 +200,43 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				34A2D84C171B9F5CE74944417278698D /* Pods */,
+				2237FD356EF2531DC3346DC9FC41B1D4 /* Pods */,
 				FC6F6C5031AF9FE3F6A4B01315C80597 /* Products */,
 				D08914A407F14A440CC9FE01C017FD72 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8BE1502B417C9F4A988A67F4A72C8FB3 /* GoogleIPhoneUtilities */ = {
+		7F4AE3AF5A83D2413BDC3F1DB99B1C50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				175E4A61A6852315FF015623251C0664 /* Frameworks */,
-			);
-			path = GoogleIPhoneUtilities;
-			sourceTree = "<group>";
-		};
-		93D860752B2781024CD9DF40174F52AC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FF1906CB1A229446B2333E2E41FC1141 /* GoogleUtilities.framework */,
+				99B68CF1ADAB06A12C3B1709545851D7 /* GoogleIPhoneUtilities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		972D318A56DA562255BBE037AF3BBE6E /* Frameworks */ = {
+		8087E794C343C2DBB29A855587ACB3A3 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				9C801EACF390ADA59E5AF718B5294527 /* GoogleSymbolUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		996BD9460685239414862BEA0DE99B90 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8DD2522AEC4D505E0BEB479E4743E4C2 /* FirebaseInstanceID.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A87AC2D7A2BFB50E118F2D375C0A0198 /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				1CEDE4EDDF0ACF13A8595A37BC90B505 /* Analytics */,
+				EC76245AF703A1367B3EF0D0556241B4 /* Analytics */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		8DF1A305678847A08462922F1C992BFF /* FirebaseMessaging */ = {
+			isa = PBXGroup;
+			children = (
+				DF22CE38FF1C226871EEF2DF8A92A6F4 /* FIRMessaging.h */,
+				4908E0BF6A77E66554459B32B02D3447 /* Frameworks */,
+			);
+			path = FirebaseMessaging;
+			sourceTree = "<group>";
+		};
+		BAB304490D0553171C9A33BC3751FC3B /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				12A07F8675C9E2CD15FD0813EF0B9FB8 /* Frameworks */,
+			);
+			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -242,6 +247,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BF624D72B8252DD28AC8A51FB5C6F1C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85A84C332B54E100C15FEEC2EB859086 /* GoogleMobileAds.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC38B3D8A2DD17B63BE8697773B8BBD6 /* GoogleNetworkingUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				14F9BD1B212836E8BAE19042C907C919 /* Frameworks */,
+			);
+			path = GoogleNetworkingUtilities;
+			sourceTree = "<group>";
+		};
+		CDCC3A9035ACF122E30B1D00E9E73888 /* GoogleSymbolUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				57F04ED8431648B3B5126C48C10308B2 /* Frameworks */,
+			);
+			path = GoogleSymbolUtilities;
+			sourceTree = "<group>";
+		};
 		D08914A407F14A440CC9FE01C017FD72 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,20 +279,37 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		E2EE815F952799FA3CADE0EAC42846A8 /* Frameworks */ = {
+		D1418BFE4123EB6A1C3F4C039ACAE06D /* Google-Mobile-Ads-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				641CDD9A4E117DDB479616CC2A4FD5EE /* GoogleMobileAds.framework */,
+				BF624D72B8252DD28AC8A51FB5C6F1C3 /* Frameworks */,
 			);
-			name = Frameworks;
+			path = "Google-Mobile-Ads-SDK";
 			sourceTree = "<group>";
 		};
-		F8FE25F9B685C6CBE01ACBF2387D22DE /* Frameworks */ = {
+		E7E95B9AF8355CC4F96930683795B0D3 /* FirebaseInstanceID */ = {
 			isa = PBXGroup;
 			children = (
-				5019DDF0FB9E60BE3F5D2AB6CBEE9018 /* GoogleInterchangeUtilities.framework */,
+				674E1F74A6EFB9D04F52E6F2723B0E84 /* FIRInstanceID.h */,
+				3AFC12D07649F9F6A13E4B95F1D0AE65 /* Frameworks */,
 			);
-			name = Frameworks;
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		EC76245AF703A1367B3EF0D0556241B4 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				BE2AB7DAC6B9D4A5726DA3FEAC6FEC7E /* Firebase.h */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		EF4BDDA7AA46AFAFFBE4BAD03F18C566 /* GoogleUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				3EEEE8EBA8996E4D678F97A56935CE8A /* Frameworks */,
+			);
+			path = GoogleUtilities;
 			sourceTree = "<group>";
 		};
 		FC6F6C5031AF9FE3F6A4B01315C80597 /* Products */ = {
@@ -272,6 +318,14 @@
 				6173C8A6BD23BD65374C705CEC6541DB /* Pods_Space_Fighter.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FF031650AFBA082DD13ABC9540C5C392 /* FirebaseDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				0F395E83C74D76A59263236CB16EF792 /* Frameworks */,
+			);
+			path = FirebaseDatabase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class UploadViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -28,6 +30,10 @@ class UploadViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var puntaje: UILabel!
     @IBOutlet weak var pais: UILabel!
     @IBOutlet weak var uploadButton: UIButton!
+    @IBOutlet weak var nombreDeJugador: UITextField!
+    @IBOutlet weak var loading: UIActivityIndicatorView!
+    
+    let firebaseRef = FIRDatabase.database().reference().child("Puntajes")
     
     var espanol = false
     let pre = NSLocale.preferredLanguages()[0]
@@ -74,20 +80,29 @@ class UploadViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
             switch currentDificulty  {
             case .Easy:
                 puntaje.text! = "Tu puntaje: \(defaults.integerForKey("bestScoreEasy"))"
+                score = defaults.integerForKey("bestScoreEasy")
             case .Medium:
                 puntaje.text! = "Tu puntaje: \(defaults.integerForKey("bestScore"))"
+                score = defaults.integerForKey("bestScore")
             case .Hard:
                 puntaje.text! = "Tu puntaje: \(defaults.integerForKey("bestScoreHard"))"
+                score = defaults.integerForKey("bestScoreHard")
             }
         }
-        
-        switch currentDificulty {
-        case .Easy:
-            puntaje.text! = "Your high score: \(defaults.integerForKey("bestScoreEasy"))"
-        case .Medium:
-            puntaje.text! = "Your high score: \(defaults.integerForKey("bestScore"))"
-        case .Hard:
-            puntaje.text! = "Your high score: \(defaults.integerForKey("bestScoreHard"))"
+            
+        else {
+            
+            switch currentDificulty {
+            case .Easy:
+                puntaje.text! = "Your high score: \(defaults.integerForKey("bestScoreEasy"))"
+                score = defaults.integerForKey("bestScoreEasy")
+            case .Medium:
+                puntaje.text! = "Your high score: \(defaults.integerForKey("bestScore"))"
+                score = defaults.integerForKey("bestScore")
+            case .Hard:
+                puntaje.text! = "Your high score: \(defaults.integerForKey("bestScoreHard"))"
+                score = defaults.integerForKey("bestScoreHard")
+            }
         }
         
         
@@ -100,7 +115,44 @@ class UploadViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
     
     @IBAction func uploadButtonAction(sender: AnyObject) {
         
+        let numberOnPickerView = selectCountry.selectedRowInComponent(0)
+        let countryOfPlayer = countries[numberOnPickerView]
+        
+        
+        if nombreDeJugador.text! == "" {
+            nombreDeJugador.layer.borderColor = UIColor.redColor().CGColor
+            nombreDeJugador.layer.cornerRadius = 8.0
+            nombreDeJugador.layer.borderWidth = 2
+            print(countryOfPlayer)
+        }
+            
+        else {
+            loading.startAnimating()
+            let user = FIRAuth.auth()?.currentUser?.uid
+            
+            switch currentDificulty {
+            case .Easy:
+                let easy = firebaseRef.child("Facil").child(user!)
+                let info = ["Nombre": nombreDeJugador.text!, "Puntaje": score, "Pais": countryOfPlayer, "Dificultad": currentDificulty.rawValue]
+                easy.setValue(info)
+            case .Medium:
+                let medium = firebaseRef.child("Intermedio").child(user!)
+                let info = ["Nombre": nombreDeJugador.text!, "Puntaje": score, "Pais": countryOfPlayer, "Dificultad": currentDificulty.rawValue]
+                medium.setValue(info)
+            case .Hard:
+                let hard = firebaseRef.child("Dificil").child(user!)
+                let info = ["Nombre": nombreDeJugador.text!, "Puntaje": score, "Pais": countryOfPlayer, "Dificultad": currentDificulty.rawValue]
+                hard.setValue(info)
+            }
+            
+            dismissViewControllerAnimated(true, completion: nil)
+            
+        }
+     
+
     }
+    
+    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -121,4 +173,5 @@ class UploadViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
         return myTitle
     }
     
+
 }

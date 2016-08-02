@@ -10,4 +10,6 @@ pod 'Firebase'
 pod 'Firebase/AdMob'
 pod 'Firebase/Core'
 pod 'Firebase/Messaging'
+pod 'Firebase/Database'
+pod 'Firebase/Auth'
 end
