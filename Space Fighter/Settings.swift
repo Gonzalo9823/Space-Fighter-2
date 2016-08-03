@@ -7,6 +7,8 @@
 //
 
 import SpriteKit
+import Firebase
+import FirebaseDatabase
 
 class Settings: SKScene {
     
@@ -229,7 +231,7 @@ class Settings: SKScene {
                     print("NOMUSIC")
                 }
             }
-            
+                
             else if touchedNode.name == "Subir" {
                 let vc = viewController.storyboard?.instantiateViewControllerWithIdentifier("upload")
                 viewController.presentViewController(vc!, animated: true, completion: nil)

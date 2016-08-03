@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class MundialScoreTableViewController: UITableViewController {
 
@@ -19,6 +21,12 @@ class MundialScoreTableViewController: UITableViewController {
     let defaults = NSUserDefaults.standardUserDefaults()
     var espanol = false
     
+    var dificultad : AnyObject?
+    var nombre : AnyObject?
+    var pais : AnyObject?
+    var puntaje : AnyObject?
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,16 +34,27 @@ class MundialScoreTableViewController: UITableViewController {
         if (pre.rangeOfString("es") != nil) {
             espanol = true
         }
-
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
         if espanol {
             highScoreTitle.title! = "Mejores puntajes del mundo"
         }
+        
+        let firebaseRef = FIRDatabase.database().reference().child("Puntajes").child("Facil")
+        
+        firebaseRef.observeEventType(.ChildAdded, withBlock: { (snapshot) in
+            if let stuff = snapshot.value as? [String: AnyObject] {
+                self.dificultad = stuff["Dificultad"]
+                self.nombre = stuff["Nombre"]
+                self.pais = stuff["Pais"]
+                self.puntaje = stuff["Puntaje"]
+                
+                print("Nombre del jugador: \(self.nombre!)")
+                print("Dificultad de juego: \(self.dificultad!)")
+                print("Pais de jugador: \(self.pais!)")
+                print("Puntaje de jugador \(self.puntaje!)")
+                print("----------------------------------------")
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {
